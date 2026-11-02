@@ -1,0 +1,953 @@
+{
+  "name": "A1 Prospect List Builder",
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "connections": {
+    "Every Monday 7am": {
+      "main": [
+        [
+          {
+            "node": "ICP Settings",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ICP Settings": {
+      "main": [
+        [
+          {
+            "node": "Enrich a person",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "One Item per Person": {
+      "main": [
+        [
+          {
+            "node": "Normalize Prospect",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Normalize Prospect": {
+      "main": [
+        [
+          {
+            "node": "Has Company Domain",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Has Company Domain": {
+      "main": [
+        [
+          {
+            "node": "Drop Companies Already in CRM",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Drop Companies Already in CRM": {
+      "main": [
+        [
+          {
+            "node": "Drop Excluded Companies",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Drop Excluded Companies": {
+      "main": [
+        [
+          {
+            "node": "Get Verified Work Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Verified Work Email": {
+      "main": [
+        [
+          {
+            "node": "Keep Verified Emails Only",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Keep Verified Emails Only": {
+      "main": [
+        [
+          {
+            "node": "Attach Email to Prospect",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Attach Email to Prospect": {
+      "main": [
+        [
+          {
+            "node": "Read Company Website",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Company Website": {
+      "main": [
+        [
+          {
+            "node": "Research and Score Prospect",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Research and Score Prospect": {
+      "main": [
+        [
+          {
+            "node": "Build Lead Record",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Claude (Research)": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Research and Score Prospect",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Search Recent News": {
+      "ai_tool": [
+        [
+          {
+            "node": "Research and Score Prospect",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Score Format": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Research and Score Prospect",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Lead Record": {
+      "main": [
+        [
+          {
+            "node": "Save Lead to CRM",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save Lead to CRM": {
+      "main": [
+        [
+          {
+            "node": "Post Weekly Prospect Summary",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Every Friday 4pm": {
+      "main": [
+        [
+          {
+            "node": "Get All Leads",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get All Leads": {
+      "main": [
+        [
+          {
+            "node": "Compute Weekly Numbers",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Compute Weekly Numbers": {
+      "main": [
+        [
+          {
+            "node": "Post Weekly Report",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Enrich a person": {
+      "main": [
+        [
+          {
+            "node": "One Item per Person",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "triggerAtDay": [
+                1
+              ],
+              "triggerAtHour": 7
+            }
+          ]
+        }
+      },
+      "id": "16de4a4f-f8b4-4955-b953-336e60c4aa47",
+      "name": "Every Monday 7am",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        -112,
+        96
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "icp-titles",
+              "name": "person_titles",
+              "value": "={{ [\"Head of Operations\", \"COO\", \"Founder\", \"CEO\"] }}",
+              "type": "array"
+            },
+            {
+              "id": "icp-sizes",
+              "name": "employee_ranges",
+              "value": "={{ [\"20,50\", \"51,200\"] }}",
+              "type": "array"
+            },
+            {
+              "id": "icp-locations",
+              "name": "locations",
+              "value": "={{ [\"United States\"] }}",
+              "type": "array"
+            },
+            {
+              "id": "icp-keywords",
+              "name": "industry_keywords",
+              "value": "={{ [\"logistics\", \"marketing agency\"] }}",
+              "type": "array"
+            },
+            {
+              "id": "icp-target",
+              "name": "weekly_target",
+              "value": 100,
+              "type": "number"
+            },
+            {
+              "id": "icp-threshold",
+              "name": "score_threshold",
+              "value": 70,
+              "type": "number"
+            },
+            {
+              "id": "icp-summary",
+              "name": "icp_description",
+              "value": "Companies of 20-200 employees in logistics or agencies in the US. Buyer: Head of Operations / COO. Decision maker: Founder / CEO. Buying signals: hiring for finance or ops roles, recent funding, new location, using a competitor tool. Exclude existing customers, competitors and partners.",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "1edc6cad-0716-4761-9e71-1300ab0cdd59",
+      "name": "ICP Settings",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        176,
+        112
+      ]
+    },
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "kit1-sales"
+        },
+        "text": "=:warning: Kit 1 prospect search stopped. Apollo returned an error (credit limit or auth). Details: {{ JSON.stringify($json).slice(0, 300) }}",
+        "otherOptions": {}
+      },
+      "id": "3804ca70-01ef-4d67-92d7-61a25561b359",
+      "name": "Alert: Apollo Search Failed",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.7,
+      "position": [
+        832,
+        432
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "people",
+        "options": {}
+      },
+      "id": "a12b2a8f-3b90-42ec-b92e-fea6a2703d0e",
+      "name": "One Item per Person",
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1.1,
+      "position": [
+        720,
+        128
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "n-pid",
+              "name": "apollo_person_id",
+              "value": "={{ $json.id }}",
+              "type": "string"
+            },
+            {
+              "id": "n-name",
+              "name": "contact_name",
+              "value": "={{ $json.name ?? [$json.first_name, $json.last_name].filter(Boolean).join(\" \") }}",
+              "type": "string"
+            },
+            {
+              "id": "n-title",
+              "name": "contact_title",
+              "value": "={{ $json.title ?? \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "n-li",
+              "name": "linkedin_url",
+              "value": "={{ $json.linkedin_url ?? \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "n-co",
+              "name": "company_name",
+              "value": "={{ $json.organization?.name ?? \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "n-dom",
+              "name": "domain",
+              "value": "={{ ($json.organization?.primary_domain ?? \"\").toLowerCase() }}",
+              "type": "string"
+            },
+            {
+              "id": "n-ind",
+              "name": "industry",
+              "value": "={{ $json.organization?.industry ?? \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "n-emp",
+              "name": "employees",
+              "value": "={{ $json.organization?.estimated_num_employees ?? 0 }}",
+              "type": "number"
+            },
+            {
+              "id": "n-loc",
+              "name": "location",
+              "value": "={{ [$json.city, $json.state, $json.country].filter(Boolean).join(\", \") }}",
+              "type": "string"
+            },
+            {
+              "id": "n-web",
+              "name": "website",
+              "value": "={{ $json.organization?.website_url ?? (\"https://\" + ($json.organization?.primary_domain ?? \"\")) }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "b396891c-1f03-4f38-95ac-6932e9e81e41",
+      "name": "Normalize Prospect",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        944,
+        128
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 4
+          },
+          "conditions": [
+            {
+              "leftValue": "={{ $json.domain }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              },
+              "id": "c6458f45-cc26-4eb3-9b76-5d9e97cf381a"
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "0ced9adc-36ec-4f3d-9f75-57a412363e15",
+      "name": "Has Company Domain",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.4,
+      "position": [
+        1168,
+        128
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "rowNotExists",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "domain",
+              "keyValue": "={{ $json.domain }}"
+            }
+          ]
+        }
+      },
+      "id": "93d7d772-6c6b-4135-93a0-6b8b4073cce3",
+      "name": "Drop Companies Already in CRM",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        1392,
+        128
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "rowNotExists",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Exclusions"
+        },
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "domain",
+              "keyValue": "={{ $json.domain }}"
+            }
+          ]
+        }
+      },
+      "id": "c673465f-523d-4659-a617-6e84b0e7b234",
+      "name": "Drop Excluded Companies",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        1616,
+        128
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apollo.io/api/v1/people/match",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpTemplatedCustomAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ id: $json.apollo_person_id, reveal_personal_emails: false }) }}",
+        "options": {
+          "batching": {
+            "batch": {
+              "batchSize": 5,
+              "batchInterval": 1500
+            }
+          }
+        }
+      },
+      "id": "77322d99-a432-4f38-8ff4-45d4bc8afa10",
+      "name": "Get Verified Work Email",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        1840,
+        128
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "combinator": "and",
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 1
+          },
+          "conditions": [
+            {
+              "leftValue": "={{ $json.person?.email ?? \"\" }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            },
+            {
+              "leftValue": "={{ $json.person?.email_status ?? \"\" }}",
+              "rightValue": "verified",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "92f2fa70-932f-48c2-99bc-257eb0a3cc5e",
+      "name": "Keep Verified Emails Only",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.4,
+      "position": [
+        2064,
+        128
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "we-all",
+              "name": "prospect",
+              "value": "={{ $(\"Normalize Prospect\").item.json }}",
+              "type": "object"
+            },
+            {
+              "id": "we-email",
+              "name": "contact_email",
+              "value": "={{ $json.person.email }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "20e2f61c-a4cc-459b-b5e8-2566e9c55ae7",
+      "name": "Attach Email to Prospect",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2288,
+        128
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "scrape",
+        "url": "={{ $json.prospect.website }}",
+        "scrapeOptions": {
+          "options": {
+            "formats": {
+              "format": [
+                {
+                  "type": "summary"
+                }
+              ]
+            },
+            "headers": {}
+          }
+        },
+        "requestOptions": {}
+      },
+      "id": "c62c17d8-2ea2-4709-a566-c1613c681e20",
+      "name": "Read Company Website",
+      "type": "@mendable/n8n-nodes-firecrawl.firecrawl",
+      "typeVersion": 1,
+      "position": [
+        2720,
+        144
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Ideal customer profile:\n{{ $(\"ICP Settings\").first().json.icp_description }}\n\nProspect:\n{{ JSON.stringify($(\"Attach Email to Prospect\").item.json.prospect) }}\n\nWebsite summary (may be empty if the site was unreachable):\n{{ $json.data?.summary ?? $json.data?.markdown?.slice(0, 4000) ?? \"\" }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "You are a B2B sales researcher. Use the \"Search Recent News\" tool at most twice to look for recent news about the company (hiring, funding, new locations, tools they use). Then score fit from 0 to 100 against the ICP and write a one-line reason that starts with the score, e.g. \"80: 50-person agency, hiring 2 SDRs, uses a competitor\". In research_notes, list what the company does, the buying signals you found, and one specific observation a sales email could open with. If the website summary is empty, score from the database data only and set confidence to \"low\".",
+          "maxIterations": 5,
+          "batching": {
+            "batchSize": 3,
+            "delayBetweenBatches": 1000
+          }
+        }
+      },
+      "id": "a5ee7d89-9975-4de7-ba38-0b009d70d467",
+      "name": "Research and Score Prospect",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        3008,
+        128
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "claude-sonnet-5",
+          "cachedResultName": "Claude Sonnet 5"
+        },
+        "options": {
+          "maxTokensToSample": 2048
+        }
+      },
+      "id": "609730d7-087c-4af3-82a4-e4d965b16cf6",
+      "name": "Claude (Research)",
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.6,
+      "position": [
+        2944,
+        352
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "MapSearch",
+        "operation": "search",
+        "query": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('query', 'Search query, e.g. company name plus hiring, funding, expansion news') }}",
+        "sources": [
+          "news",
+          "web"
+        ],
+        "limit": 5,
+        "tbs": "qdr:m",
+        "requestOptions": {}
+      },
+      "id": "9ce903db-980a-48de-9017-fedf080d4b47",
+      "name": "Search Recent News",
+      "type": "@mendable/n8n-nodes-firecrawl.firecrawlTool",
+      "typeVersion": 1,
+      "position": [
+        3104,
+        544
+      ]
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{ \"fit_score\": 80, \"score_reason\": \"80: 50-person agency, hiring 2 SDRs, uses a competitor\", \"research_notes\": \"Bullet notes: what they do, buying signals, a specific observation to open an email with\", \"buying_signals\": [\"hiring finance assistant\"], \"confidence\": \"high\" }"
+      },
+      "id": "bffe14e3-2bee-4482-966f-58fc92d3d531",
+      "name": "Score Format",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        3200,
+        352
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "bl-p",
+              "name": "p",
+              "value": "={{ $(\"Attach Email to Prospect\").item.json.prospect }}",
+              "type": "object"
+            },
+            {
+              "id": "bl-email",
+              "name": "contact_email",
+              "value": "={{ $(\"Attach Email to Prospect\").item.json.contact_email }}",
+              "type": "string"
+            },
+            {
+              "id": "bl-score",
+              "name": "fit_score",
+              "value": "={{ Number($json.output?.fit_score ?? 0) }}",
+              "type": "number"
+            },
+            {
+              "id": "bl-reason",
+              "name": "score_reason",
+              "value": "={{ $json.output?.score_reason ?? \"Scoring failed - review manually\" }}",
+              "type": "string"
+            },
+            {
+              "id": "bl-notes",
+              "name": "research_notes",
+              "value": "={{ $json.output?.research_notes ?? \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "bl-conf",
+              "name": "confidence",
+              "value": "={{ $json.output?.confidence ?? \"low\" }}",
+              "type": "string"
+            },
+            {
+              "id": "bl-stage",
+              "name": "stage",
+              "value": "={{ Number($json.output?.fit_score ?? 0) >= $(\"ICP Settings\").first().json.score_threshold ? \"Ready for outreach\" : \"Researched\" }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "cf051262-b103-4d1b-8a28-0193f2034a86",
+      "name": "Build Lead Record",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3408,
+        128
+      ]
+    },
+    {
+      "parameters": {
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "company_name": "={{ $json.p.company_name }}",
+            "domain": "={{ $json.p.domain }}",
+            "industry": "={{ $json.p.industry }}",
+            "employees": "={{ $json.p.employees }}",
+            "location": "={{ $json.p.location }}",
+            "contact_name": "={{ $json.p.contact_name }}",
+            "contact_title": "={{ $json.p.contact_title }}",
+            "contact_email": "={{ $json.contact_email }}",
+            "linkedin_url": "={{ $json.p.linkedin_url }}",
+            "stage": "={{ $json.stage }}",
+            "fit_score": "={{ $json.fit_score }}",
+            "score_reason": "={{ $json.score_reason }}",
+            "research_notes": "={{ $json.research_notes }}",
+            "confidence": "={{ $json.confidence }}",
+            "sequence_step": 0,
+            "do_not_contact": false,
+            "source": "apollo"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "654902ea-d8b2-4548-a0d9-b8a23fa3c333",
+      "name": "Save Lead to CRM",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        3632,
+        128
+      ]
+    },
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "kit1-sales"
+        },
+        "text": "=*Kit 1 · Weekly prospect list*\nFound: {{ $(\"One Item per Person\").all().length }} · New with verified email: {{ $(\"Build Lead Record\").all().length }} · Qualified (Ready for outreach): {{ $(\"Build Lead Record\").all().filter(i => i.json.stage === \"Ready for outreach\").length }}\n\n*Top 5*\n{{ $(\"Build Lead Record\").all().map(i => i.json).sort((a, b) => b.fit_score - a.fit_score).slice(0, 5).map(l => \"• \" + l.p.company_name + \" – \" + l.p.contact_name + \" (\" + l.p.contact_title + \"): \" + l.score_reason).join(\"\\n\") }}\n\nLeads below the threshold stay at Researched for review.",
+        "otherOptions": {}
+      },
+      "id": "61cb5526-a900-4257-9f72-913e7a817d8a",
+      "name": "Post Weekly Prospect Summary",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.7,
+      "position": [
+        3856,
+        128
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "triggerAtDay": [
+                5
+              ],
+              "triggerAtHour": 16
+            }
+          ]
+        }
+      },
+      "id": "2561c84d-61bf-438e-a00a-716e744c66c5",
+      "name": "Every Friday 4pm",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        -112,
+        480
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "returnAll": true
+      },
+      "id": "6c8cf855-54ed-4dbb-8960-0479c2a437d9",
+      "name": "Get All Leads",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        208,
+        880
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const rows = $input.all().map(i => i.json);\nconst since = $now.minus({ days: 7 });\nconst inWeek = (d) => d && DateTime.fromISO(String(d)) >= since;\nconst created = rows.filter(r => inWeek(r.createdAt));\nconst contacted = rows.filter(r => inWeek(r.last_contacted_at));\nconst replied = rows.filter(r => r.reply_category && inWeek(r.updatedAt));\nconst interested = replied.filter(r => r.reply_category === \"interested\");\nconst booked = rows.filter(r => inWeek(r.meeting_time) || (r.stage === \"Meeting booked\" && inWeek(r.updatedAt)));\nconst sent = rows.filter(r => inWeek(r.proposal_sent_at));\nconst won = rows.filter(r => r.stage === \"Won\" && inWeek(r.updatedAt));\nconst lost = rows.filter(r => r.stage === \"Lost\" && inWeek(r.updatedAt));\nconst avg = created.length ? Math.round(created.reduce((s, r) => s + (r.fit_score || 0), 0) / created.length) : 0;\nconst open = rows.filter(r => [\"Interested\", \"Meeting booked\", \"Proposal needed\", \"Proposal sent\"].includes(r.stage)).length;\nreturn [{ json: { prospects_added: created.length, avg_fit: avg, emails_contacted: contacted.length, replies: replied.length, reply_rate: contacted.length ? Math.round(100 * replied.length / contacted.length) : 0, interested: interested.length, meetings: booked.length, proposals_sent: sent.length, won: won.length, lost: lost.length, lost_reasons: lost.map(r => r.lost_reason).filter(Boolean), open_pipeline: open } }];"
+      },
+      "id": "4f160b52-c8e2-4c3f-83da-c5ce4fa6f4b3",
+      "name": "Compute Weekly Numbers",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        432,
+        880
+      ]
+    },
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "kit1-sales"
+        },
+        "text": "=*Kit 1 · Weekly report ({{ $now.minus({ days: 7 }).toFormat(\"MMM d\") }} – {{ $now.toFormat(\"MMM d\") }})*\n• Prospects added: {{ $json.prospects_added }} (avg fit {{ $json.avg_fit }})\n• Leads emailed: {{ $json.emails_contacted }} · Replies: {{ $json.replies }} ({{ $json.reply_rate }}%) · Interested: {{ $json.interested }}\n• Meetings booked: {{ $json.meetings }}\n• Proposals sent: {{ $json.proposals_sent }} · Won: {{ $json.won }} · Lost: {{ $json.lost }}{{ $json.lost_reasons.length ? \" (\" + $json.lost_reasons.join(\"; \") + \")\" : \"\" }}\n• Open deals in pipeline: {{ $json.open_pipeline }}\nCheck n8n Executions for any failed runs this week.",
+        "otherOptions": {}
+      },
+      "id": "17cfd6b0-3651-4940-91a5-5a99e4060481",
+      "name": "Post Weekly Report",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.7,
+      "position": [
+        656,
+        880
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Automation 1 — Prospect list builder\nRuns every Monday 7am. Edit **ICP Settings** to change who is targeted and the score threshold.\n\nSetup: create an *Apollo API Key* credential (custom auth, header `x-api-key`), a *Slack Bot* credential, and a `#kit1-sales` channel. Claude and Firecrawl use n8n credits.\n\nThe Friday branch posts the Kit 1 weekly report.",
+        "height": 224,
+        "width": 672,
+        "color": 4
+      },
+      "id": "b6d3ba24-a513-4409-8fb6-8c617391174c",
+      "name": "Sticky Note 9b1510a5",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -144,
+        -448
+      ]
+    },
+    {
+      "parameters": {
+        "options": {},
+        "requestOptions": {}
+      },
+      "type": "@prospeo/n8n-nodes-prospeo.prospeo",
+      "typeVersion": 1,
+      "position": [
+        448,
+        96
+      ],
+      "id": "b1a813df-bf4d-458a-b0d2-4abfc7954e25",
+      "name": "Enrich a person"
+    }
+  ]
+}

@@ -1,0 +1,2484 @@
+{
+  "name": "A3 Qualifier and Meeting Booker",
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "connections": {
+    "Website Lead Form": {
+      "main": [
+        [
+          {
+            "node": "Save Inbound Lead",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Every 5 min: New Interested Leads": {
+      "main": [
+        [
+          {
+            "node": "Get Leads Needing Questions",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Leads Needing Questions": {
+      "main": [
+        [
+          {
+            "node": "Reply in Existing Thread?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Reply in Existing Thread?": {
+      "main": [
+        [
+          {
+            "node": "Send Questions in Thread",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send Questions (New Email)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Questions in Thread": {
+      "main": [
+        [
+          {
+            "node": "Mark Questions Sent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Questions (New Email)": {
+      "main": [
+        [
+          {
+            "node": "Mark Questions Sent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "New Answer in Inbox": {
+      "main": [
+        [
+          {
+            "node": "Find Lead for Answer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Find Lead for Answer": {
+      "main": [
+        [
+          {
+            "node": "Only Leads Awaiting Answers",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Only Leads Awaiting Answers": {
+      "main": [
+        [
+          {
+            "node": "Score Qualification Answers",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Score Qualification Answers": {
+      "main": [
+        [
+          {
+            "node": "Qualification Result",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Claude (Qualifier)": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Score Qualification Answers",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Qualification Format": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Score Qualification Answers",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Qualification Result": {
+      "main": [
+        [
+          {
+            "node": "Route by Qualification",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Mark Answer as Handled",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Route by Qualification": {
+      "main": [
+        [
+          {
+            "node": "Get Rep Calendar (10 days)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send Helpful Resource",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send Polite Close-out",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Hand Lead to Rep",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Rep Calendar (10 days)": {
+      "main": [
+        [
+          {
+            "node": "Suggest 3 Free Times",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Suggest 3 Free Times": {
+      "main": [
+        [
+          {
+            "node": "Send Booking Link",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Booking Link": {
+      "main": [
+        [
+          {
+            "node": "Mark Booking Link Sent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Helpful Resource": {
+      "main": [
+        [
+          {
+            "node": "Move to Nurture (Not Yet)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Polite Close-out": {
+      "main": [
+        [
+          {
+            "node": "Mark Disqualified",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Hand Lead to Rep": {
+      "main": [
+        [
+          {
+            "node": "Mark Handed to Rep",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "New Event on Rep Calendar": {
+      "main": [
+        [
+          {
+            "node": "Find Lead by Attendee",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Find Lead by Attendee": {
+      "main": [
+        [
+          {
+            "node": "Mark Meeting Booked",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mark Meeting Booked": {
+      "main": [
+        [
+          {
+            "node": "Send Booking Confirmation",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Every 15 min: Meetings": {
+      "main": [
+        [
+          {
+            "node": "Get Booked Meetings",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Booked Meetings": {
+      "main": [
+        [
+          {
+            "node": "24h Reminder Due",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "1h Reminder and Brief Due",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Call Is Over",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "24h Reminder Due": {
+      "main": [
+        [
+          {
+            "node": "Send 24h Reminder",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send 24h Reminder": {
+      "main": [
+        [
+          {
+            "node": "Flag 24h Reminder Sent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "1h Reminder and Brief Due": {
+      "main": [
+        [
+          {
+            "node": "Write Pre-call Brief",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Write Pre-call Brief": {
+      "main": [
+        [
+          {
+            "node": "Post Brief to Rep",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Claude (Brief)": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Write Pre-call Brief",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Post Brief to Rep": {
+      "main": [
+        [
+          {
+            "node": "Send 1h Reminder",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send 1h Reminder": {
+      "main": [
+        [
+          {
+            "node": "Save Brief and Flags",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Call Is Over": {
+      "main": [
+        [
+          {
+            "node": "Mark Awaiting Outcome",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mark Awaiting Outcome": {
+      "main": [
+        [
+          {
+            "node": "Ask Rep for Call Outcome",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ask Rep for Call Outcome": {
+      "main": [
+        [
+          {
+            "node": "Route by Call Outcome",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Route by Call Outcome": {
+      "main": [
+        [
+          {
+            "node": "Set Proposal Needed",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "First No-show?",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Disqualify After Call",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Nurture After Call",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "First No-show?": {
+      "main": [
+        [
+          {
+            "node": "Send Reschedule Link",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Nurture After Call",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Reschedule Link": {
+      "main": [
+        [
+          {
+            "node": "Back to Interested",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Weekdays 10am: Nudges": {
+      "main": [
+        [
+          {
+            "node": "Get Silent Interested Leads",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Silent Interested Leads": {
+      "main": [
+        [
+          {
+            "node": "Waiting on Their Reply",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Waiting on Their Reply": {
+      "main": [
+        [
+          {
+            "node": "Fewer Than 2 Nudges?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fewer Than 2 Nudges?": {
+      "main": [
+        [
+          {
+            "node": "Send Gentle Nudge",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Nurture After 2 Nudges",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Gentle Nudge": {
+      "main": [
+        [
+          {
+            "node": "Count Nudge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "nodes": [
+    {
+      "parameters": {
+        "formTitle": "Talk to us",
+        "formDescription": "Tell us a little about your business and we will get back to you within minutes.",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Your name",
+              "fieldName": "name",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Work email",
+              "fieldType": "email",
+              "fieldName": "email",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Company",
+              "fieldName": "company",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Company website",
+              "fieldName": "website"
+            },
+            {
+              "fieldLabel": "How can we help?",
+              "fieldType": "textarea",
+              "fieldName": "message"
+            }
+          ]
+        },
+        "options": {
+          "appendAttribution": false,
+          "respondWithOptions": {
+            "values": {
+              "formSubmittedText": "Thanks! Check your inbox in a few minutes."
+            }
+          }
+        }
+      },
+      "id": "0f42f112-e378-4814-b92c-6123a4c3ee6e",
+      "name": "Website Lead Form",
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.6,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "contact_name": "={{ $json.name }}",
+            "contact_email": "={{ $json.email.toLowerCase() }}",
+            "company_name": "={{ $json.company }}",
+            "domain": "={{ ($json.website || $json.email.split(\"@\")[1] || \"\").replace(/^https?:\\/\\//, \"\").replace(/^www\\./, \"\").split(\"/\")[0].toLowerCase() }}",
+            "research_notes": "=Inbound form message: {{ $json.message }}",
+            "stage": "Interested",
+            "outreach_status": "replied",
+            "fit_score": 50,
+            "sequence_step": 0,
+            "do_not_contact": false,
+            "source": "inbound_form"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "ce700c33-c4a6-42b4-b3f9-661b696193cf",
+      "name": "Save Inbound Lead",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        224,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "minutes"
+            }
+          ]
+        }
+      },
+      "id": "bc352f02-80ff-4ae0-b425-653becb7c1fc",
+      "name": "Every 5 min: New Interested Leads",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        0,
+        224
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "stage",
+              "keyValue": "Interested"
+            },
+            {
+              "keyName": "outreach_status",
+              "keyValue": "replied"
+            }
+          ]
+        },
+        "limit": 20
+      },
+      "id": "ae631ab8-2a2a-4e58-9987-8090644f4991",
+      "name": "Get Leads Needing Questions",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        272,
+        448
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 1
+          },
+          "conditions": [
+            {
+              "leftValue": "={{ $json.gmail_message_id }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "2caa1bc1-0763-4fb8-b16a-749d730d4d75",
+      "name": "Reply in Existing Thread?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        496,
+        448
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "reply",
+        "messageId": "={{ $json.gmail_message_id }}",
+        "emailType": "text",
+        "message": "=Hi {{ ($json.contact_name ?? \"\").split(\" \")[0] }},\n\nThanks for getting back to me. So I can make the call useful, could you share a few quick answers?\n\n1. What are you trying to solve, and why now?\n2. Roughly how many people or how much volume is involved?\n3. When would you like this in place?\n4. Who else is involved in the decision?\n\nOne line each is plenty.\n\nYour Name",
+        "options": {
+          "appendAttribution": false,
+          "replyToSenderOnly": true
+        }
+      },
+      "id": "021f28af-5b9f-41b4-946e-aa45e2ad0810",
+      "name": "Send Questions in Thread",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        720,
+        352
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyValue": "={{ $(\"Get Leads Needing Questions\").item.json.id }}"
+            }
+          ]
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "outreach_status": "qualifying_sent",
+            "last_contacted_at": "={{ $now.toISO() }}",
+            "sequence_step": 0,
+            "gmail_thread_id": "={{ $json.threadId }}",
+            "gmail_message_id": "={{ $json.id }}"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "1d616163-8738-4f1c-a76b-40eada206724",
+      "name": "Mark Questions Sent",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        944,
+        448
+      ]
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.contact_email }}",
+        "subject": "=Quick questions before we talk, {{ ($json.contact_name ?? \"\").split(\" \")[0] }}",
+        "emailType": "text",
+        "message": "=Hi {{ ($json.contact_name ?? \"\").split(\" \")[0] }},\n\nThanks for getting back to me. So I can make the call useful, could you share a few quick answers?\n\n1. What are you trying to solve, and why now?\n2. Roughly how many people or how much volume is involved?\n3. When would you like this in place?\n4. Who else is involved in the decision?\n\nOne line each is plenty.\n\nYour Name",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "id": "91b09270-d8b9-4f33-8637-d300e75f22c6",
+      "name": "Send Questions (New Email)",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        720,
+        544
+      ]
+    },
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyX",
+              "value": 5,
+              "unit": "minutes"
+            }
+          ]
+        },
+        "simple": false,
+        "filters": {
+          "q": "in:inbox -from:me newer_than:3d",
+          "readStatus": "unread"
+        },
+        "options": {}
+      },
+      "id": "4c3d3de6-9ff8-4d2f-9516-b82469bd298b",
+      "name": "New Answer in Inbox",
+      "type": "n8n-nodes-base.gmailTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        0,
+        848
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "gmail_thread_id",
+              "keyValue": "={{ $json.threadId }}"
+            },
+            {
+              "keyName": "contact_email",
+              "keyValue": "={{ ($json.from?.value?.[0]?.address ?? \"none\").toLowerCase() }}"
+            }
+          ]
+        },
+        "limit": 1
+      },
+      "id": "9ae00213-a14b-4064-9c85-2c3927f56fcc",
+      "name": "Find Lead for Answer",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        272,
+        976
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "combinator": "and",
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 1
+          },
+          "conditions": [
+            {
+              "leftValue": "={{ $json.stage }}",
+              "rightValue": "Interested",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            },
+            {
+              "leftValue": "={{ $json.outreach_status }}",
+              "rightValue": "qualifying_sent",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "81f376f8-b095-4e51-a26a-f5a8a6111b0c",
+      "name": "Only Leads Awaiting Answers",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.4,
+      "position": [
+        496,
+        976
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Lead: {{ $json.contact_name }} at {{ $json.company_name }}. Fit score from research: {{ $json.fit_score }} ({{ $json.score_reason }}).\nResearch notes: {{ $json.research_notes }}\n\nTheir answers:\n{{ ($(\"New Answer in Inbox\").item.json.text ?? \"\").slice(0, 3000) }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "You qualify sales leads. Score need, size, timing and authority from 0 to 25 each and give a total (0-100). decision must be exactly one of: qualified (real need, reasonable size, timing within ~6 months, and the fit score is 50+), not_yet (no budget or timing yet), not_fit (outside what we sell or far too small), wants_human (they ask to speak to a person, or the answer is unclear). answers_summary: 3-4 short lines in the format \"Need: ... / Size: ... / Timing: ... / Decision makers: ...\"."
+        }
+      },
+      "id": "b967dc73-33c6-45e0-8915-831ae6c633a0",
+      "name": "Score Qualification Answers",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        720,
+        976
+      ]
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "claude-sonnet-5",
+          "cachedResultName": "Claude Sonnet 5"
+        },
+        "options": {
+          "maxTokensToSample": 1024
+        }
+      },
+      "id": "8d85617f-c1cb-4c5e-a071-e99b324d9286",
+      "name": "Claude (Qualifier)",
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.6,
+      "position": [
+        736,
+        1200
+      ]
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{ \"need\": 20, \"size\": 15, \"timing\": 20, \"authority\": 15, \"total\": 70, \"decision\": \"qualified\", \"answers_summary\": \"Need: ... Size: ... Timing: ... Decision makers: ...\", \"reason\": \"why\" }"
+      },
+      "id": "00818f50-b6b2-4151-9aae-f9a82b8e610d",
+      "name": "Qualification Format",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        864,
+        1200
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "qr-id",
+              "name": "lead_id",
+              "value": "={{ $(\"Find Lead for Answer\").item.json.id }}",
+              "type": "number"
+            },
+            {
+              "id": "qr-name",
+              "name": "first_name",
+              "value": "={{ ($(\"Find Lead for Answer\").item.json.contact_name ?? \"\").split(\" \")[0] }}",
+              "type": "string"
+            },
+            {
+              "id": "qr-co",
+              "name": "company_name",
+              "value": "={{ $(\"Find Lead for Answer\").item.json.company_name }}",
+              "type": "string"
+            },
+            {
+              "id": "qr-msg",
+              "name": "message_id",
+              "value": "={{ $(\"New Answer in Inbox\").item.json.id }}",
+              "type": "string"
+            },
+            {
+              "id": "qr-dec",
+              "name": "decision",
+              "value": "={{ $json.output.decision }}",
+              "type": "string"
+            },
+            {
+              "id": "qr-tot",
+              "name": "qual_score",
+              "value": "={{ $json.output.total }}",
+              "type": "number"
+            },
+            {
+              "id": "qr-sum",
+              "name": "answers_summary",
+              "value": "={{ $json.output.answers_summary }}",
+              "type": "string"
+            },
+            {
+              "id": "qr-why",
+              "name": "reason",
+              "value": "={{ $json.output.reason }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a8c9fef5-14c9-4815-b375-1e9e799a7119",
+      "name": "Qualification Result",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        752,
+        848
+      ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 1
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.decision }}",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "rightValue": "qualified"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 1
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.decision }}",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "rightValue": "not_yet"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 1
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.decision }}",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "rightValue": "not_fit"
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra",
+          "renameFallbackOutput": "Wants a person"
+        }
+      },
+      "id": "1dcda5e6-368f-438a-8f64-23413769ec07",
+      "name": "Route by Qualification",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        976,
+        704
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "calendar": {
+          "__rl": true,
+          "mode": "id",
+          "value": "primary"
+        },
+        "returnAll": true,
+        "timeMin": "={{ $now.toISO() }}",
+        "timeMax": "={{ $now.plus({ days: 10 }).toISO() }}",
+        "options": {
+          "orderBy": "startTime"
+        }
+      },
+      "id": "3912aa35-da12-4ea9-b4bf-138050a1e950",
+      "name": "Get Rep Calendar (10 days)",
+      "type": "n8n-nodes-base.googleCalendar",
+      "typeVersion": 1.3,
+      "position": [
+        1200,
+        448
+      ],
+      "executeOnce": true,
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "jsCode": "const busy = $input.all().map(i => i.json).filter(e => e.start && e.start.dateTime).map(e => [DateTime.fromISO(e.start.dateTime), DateTime.fromISO(e.end.dateTime)]);\nconst slots = [];\nlet day = $now.plus({ days: 1 }).startOf(\"day\");\nconst stop = $now.plus({ days: 10 });\nwhile (slots.length < 3 && day < stop) {\n  if (day.weekday <= 5) {\n    for (const h of [10, 11, 14, 15, 16]) {\n      const s = day.set({ hour: h });\n      const e = s.plus({ minutes: 30 });\n      if (!busy.some(([bs, be]) => s < be && e > bs)) { slots.push(s); break; }\n    }\n  }\n  day = day.plus({ days: 1 });\n}\nconst text = slots.map(s => s.toFormat(\"cccc d LLL, h:mm a\")).join(\"\\n- \");\nreturn $(\"Route by Qualification\").all(0).map(l => ({ json: { ...l.json, suggested_times: text ? \"- \" + text : \"\" } }));"
+      },
+      "id": "df01757d-f814-430e-8e16-10e8f5b6ed81",
+      "name": "Suggest 3 Free Times",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1424,
+        448
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "reply",
+        "messageId": "={{ $json.message_id }}",
+        "emailType": "text",
+        "message": "=Thanks {{ $json.first_name }}, that is really helpful. It sounds like a short call would be worth it.\n\nA few times that work on my side:\n{{ $json.suggested_times }}\n\nPick any of these (or another free slot) here: https://calendar.app.google/REPLACE-WITH-YOUR-BOOKING-PAGE\n\nYour Name",
+        "options": {
+          "appendAttribution": false,
+          "replyToSenderOnly": true
+        }
+      },
+      "id": "3203b57e-0529-472c-87c8-ce746aab9f7e",
+      "name": "Send Booking Link",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        1648,
+        448
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyValue": "={{ $(\"Suggest 3 Free Times\").item.json.lead_id }}"
+            }
+          ]
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "outreach_status": "booking_link_sent",
+            "qual_score": "={{ $(\"Suggest 3 Free Times\").item.json.qual_score }}",
+            "qualification_answers": "={{ $(\"Suggest 3 Free Times\").item.json.answers_summary }}",
+            "last_contacted_at": "={{ $now.toISO() }}",
+            "sequence_step": 0
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "a0c62622-d1b8-49a9-852d-e22758843a18",
+      "name": "Mark Booking Link Sent",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        1872,
+        448
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "reply",
+        "messageId": "={{ $json.message_id }}",
+        "emailType": "text",
+        "message": "=Thanks {{ $json.first_name }}, that makes sense. It sounds like the timing is not quite right yet, so I will not crowd your inbox. In the meantime this guide may be useful: https://example.com/REPLACE-WITH-A-USEFUL-GUIDE\n\nI will check back in a few months.\n\nYour Name",
+        "options": {
+          "appendAttribution": false,
+          "replyToSenderOnly": true
+        }
+      },
+      "id": "a7a76a02-ee5f-40ba-a1e2-06dedee6e586",
+      "name": "Send Helpful Resource",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        1200,
+        640
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyValue": "={{ $(\"Route by Qualification\").item.json.lead_id }}"
+            }
+          ]
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "stage": "Nurture",
+            "outreach_status": "nurture",
+            "qual_score": "={{ $(\"Route by Qualification\").item.json.qual_score }}",
+            "qualification_answers": "={{ $(\"Route by Qualification\").item.json.answers_summary }}",
+            "nurture_until": "={{ $now.plus({ days: 90 }).toISO() }}"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "0578f632-a02b-4014-8531-772a924ccc4d",
+      "name": "Move to Nurture (Not Yet)",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        1424,
+        640
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "reply",
+        "messageId": "={{ $json.message_id }}",
+        "emailType": "text",
+        "message": "=Thanks for the detail, {{ $json.first_name }}. Honestly, I do not think we are the right fit for this, and I would rather not waste your time. If things change, my door is open.\n\nYour Name",
+        "options": {
+          "appendAttribution": false,
+          "replyToSenderOnly": true
+        }
+      },
+      "id": "894095d2-137e-48d4-871a-b523f62abf82",
+      "name": "Send Polite Close-out",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        1200,
+        832
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyValue": "={{ $(\"Route by Qualification\").item.json.lead_id }}"
+            }
+          ]
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "stage": "Disqualified",
+            "outreach_status": "closed",
+            "lost_reason": "={{ $(\"Route by Qualification\").item.json.reason }}",
+            "qual_score": "={{ $(\"Route by Qualification\").item.json.qual_score }}",
+            "qualification_answers": "={{ $(\"Route by Qualification\").item.json.answers_summary }}"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "1b06af00-94bd-439a-8d85-222bda7c4165",
+      "name": "Mark Disqualified",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        1424,
+        832
+      ]
+    },
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "kit1-sales"
+        },
+        "text": "=:raising_hand: {{ $json.first_name }} at {{ $json.company_name }} wants to talk to a person (or the answer was unclear). Please reply directly in Gmail.\n{{ $json.answers_summary }}",
+        "otherOptions": {}
+      },
+      "id": "12549777-9c60-40ce-a922-cde663d54f6e",
+      "name": "Hand Lead to Rep",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.7,
+      "position": [
+        1200,
+        1024
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyValue": "={{ $(\"Route by Qualification\").item.json.lead_id }}"
+            }
+          ]
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "outreach_status": "handed_to_rep",
+            "qualification_answers": "={{ $(\"Route by Qualification\").item.json.answers_summary }}"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "f0410912-9f6d-4d15-b067-fb72d6ef8689",
+      "name": "Mark Handed to Rep",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        1424,
+        1024
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "markAsRead",
+        "messageId": "={{ $json.message_id }}"
+      },
+      "id": "d0ede6fe-0181-4586-95ca-6931ff2e442d",
+      "name": "Mark Answer as Handled",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        976,
+        960
+      ]
+    },
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyX",
+              "value": 5,
+              "unit": "minutes"
+            }
+          ]
+        },
+        "calendarId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "primary"
+        },
+        "triggerOn": "eventCreated",
+        "options": {}
+      },
+      "id": "6617f631-dfae-4499-a726-c7f5aacf5f5c",
+      "name": "New Event on Rep Calendar",
+      "type": "n8n-nodes-base.googleCalendarTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        1248
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "contact_email",
+              "keyValue": "={{ (($json.attendees ?? []).find(a => !a.self && !a.organizer)?.email ?? \"none\").toLowerCase() }}"
+            },
+            {
+              "keyName": "stage",
+              "keyValue": "Interested"
+            }
+          ]
+        },
+        "limit": 1
+      },
+      "id": "2e417bf9-dc72-4b85-a21f-eeb44907c8b6",
+      "name": "Find Lead by Attendee",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        272,
+        1376
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyValue": "={{ $json.id }}"
+            }
+          ]
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "stage": "Meeting booked",
+            "outreach_status": "meeting_booked",
+            "meeting_time": "={{ $(\"New Event on Rep Calendar\").item.json.start.dateTime }}",
+            "calendar_event_id": "={{ $(\"New Event on Rep Calendar\").item.json.id }}",
+            "reminder_24h_sent": false,
+            "reminder_1h_sent": false,
+            "brief_sent": false
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "36cb0b2a-6ee7-4991-9d67-3cd690bda251",
+      "name": "Mark Meeting Booked",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        496,
+        1376
+      ]
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $(\"Find Lead by Attendee\").item.json.contact_email }}",
+        "subject": "=Confirmed: {{ DateTime.fromISO($(\"New Event on Rep Calendar\").item.json.start.dateTime).toFormat(\"cccc d LLL, h:mm a\") }}",
+        "emailType": "text",
+        "message": "=Hi {{ ($(\"Find Lead by Attendee\").item.json.contact_name ?? \"\").split(\" \")[0] }},\n\nYou are booked for {{ DateTime.fromISO($(\"New Event on Rep Calendar\").item.json.start.dateTime).toFormat(\"cccc d LLL 'at' h:mm a\") }}.\nVideo link: {{ $(\"New Event on Rep Calendar\").item.json.hangoutLink ?? \"in the calendar invite\" }}\n\nLooking forward to it.\nYour Name",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "id": "18793d85-2889-411b-8f51-212ae2d470a0",
+      "name": "Send Booking Confirmation",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        720,
+        1376
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "minutes",
+              "minutesInterval": 15
+            }
+          ]
+        }
+      },
+      "id": "c774219b-5f4c-4290-a21c-5f42e91cad01",
+      "name": "Every 15 min: Meetings",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        0,
+        1664
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "stage",
+              "keyValue": "Meeting booked"
+            }
+          ]
+        },
+        "returnAll": true
+      },
+      "id": "7876f27a-2055-4791-b1b0-385276b5f383",
+      "name": "Get Booked Meetings",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        224,
+        1664
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "combinator": "and",
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 1
+          },
+          "conditions": [
+            {
+              "leftValue": "={{ DateTime.fromISO($json.meeting_time).diff($now, \"hours\").hours }}",
+              "rightValue": 24,
+              "operator": {
+                "type": "number",
+                "operation": "lte"
+              }
+            },
+            {
+              "leftValue": "={{ DateTime.fromISO($json.meeting_time).diff($now, \"hours\").hours }}",
+              "rightValue": 2,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            },
+            {
+              "leftValue": "={{ $json.reminder_24h_sent }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "false",
+                "singleValue": true
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "14a57e7d-dbff-499a-bdf1-da03eef6ec96",
+      "name": "24h Reminder Due",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.4,
+      "position": [
+        496,
+        1600
+      ]
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.contact_email }}",
+        "subject": "=Tomorrow: our call at {{ DateTime.fromISO($json.meeting_time).toFormat(\"h:mm a\") }}",
+        "emailType": "text",
+        "message": "=Hi {{ ($json.contact_name ?? \"\").split(\" \")[0] }}, a quick reminder about our call tomorrow at {{ DateTime.fromISO($json.meeting_time).toFormat(\"h:mm a\") }}. The video link is in the calendar invite. If the time no longer works, you can move it here: https://calendar.app.google/REPLACE-WITH-YOUR-BOOKING-PAGE\n\nYour Name",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "id": "c4c524b0-e1fd-4a52-aa97-bb94037fd1c0",
+      "name": "Send 24h Reminder",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        720,
+        1600
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyValue": "={{ $(\"24h Reminder Due\").item.json.id }}"
+            }
+          ]
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "reminder_24h_sent": true
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "bd6ae3b5-7bff-431c-b317-adc168bec813",
+      "name": "Flag 24h Reminder Sent",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        944,
+        1600
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "combinator": "and",
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 1
+          },
+          "conditions": [
+            {
+              "leftValue": "={{ DateTime.fromISO($json.meeting_time).diff($now, \"minutes\").minutes }}",
+              "rightValue": 65,
+              "operator": {
+                "type": "number",
+                "operation": "lte"
+              }
+            },
+            {
+              "leftValue": "={{ DateTime.fromISO($json.meeting_time).diff($now, \"minutes\").minutes }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            },
+            {
+              "leftValue": "={{ $json.brief_sent }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "false",
+                "singleValue": true
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a8bc91fd-9abb-482c-85c2-29ec9163d199",
+      "name": "1h Reminder and Brief Due",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.4,
+      "position": [
+        496,
+        1792
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Company: {{ $json.company_name }}\nContact: {{ $json.contact_name }}, {{ $json.contact_title }}\nFit: {{ $json.score_reason }}\nResearch notes: {{ $json.research_notes }}\nTheir qualification answers: {{ $json.qualification_answers }}",
+        "options": {
+          "systemMessage": "Write a one-page pre-call brief for a sales rep in Slack markdown, under 220 words, with these bold headings: Company snapshot, Buying signals, What they told us, Likely objections, 3 questions to ask. Be concrete; do not invent facts that are not in the input."
+        }
+      },
+      "id": "5fcb278f-64c9-40a3-8853-3de68b52237c",
+      "name": "Write Pre-call Brief",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        720,
+        1792
+      ]
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "claude-sonnet-5",
+          "cachedResultName": "Claude Sonnet 5"
+        },
+        "options": {
+          "maxTokensToSample": 1500
+        }
+      },
+      "id": "3b592ddf-93bc-473f-b4e5-db1b0716eb9b",
+      "name": "Claude (Brief)",
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.6,
+      "position": [
+        800,
+        2016
+      ]
+    },
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "kit1-sales"
+        },
+        "text": "=:telephone_receiver: *Call in 1 hour: {{ $(\"1h Reminder and Brief Due\").item.json.contact_name }} ({{ $(\"1h Reminder and Brief Due\").item.json.company_name }})* at {{ DateTime.fromISO($(\"1h Reminder and Brief Due\").item.json.meeting_time).toFormat(\"h:mm a\") }}\n\n{{ $json.output }}",
+        "otherOptions": {}
+      },
+      "id": "e3c98e64-3700-47d9-90cb-e79efc2b3ab8",
+      "name": "Post Brief to Rep",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.7,
+      "position": [
+        1072,
+        1792
+      ]
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $(\"1h Reminder and Brief Due\").item.json.contact_email }}",
+        "subject": "See you in an hour",
+        "emailType": "text",
+        "message": "=Hi {{ ($(\"1h Reminder and Brief Due\").item.json.contact_name ?? \"\").split(\" \")[0] }}, see you at {{ DateTime.fromISO($(\"1h Reminder and Brief Due\").item.json.meeting_time).toFormat(\"h:mm a\") }}. The video link is in the invite.\n\nYour Name",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "id": "7ef16965-5242-4df1-83a9-d3e939ff3cec",
+      "name": "Send 1h Reminder",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        1296,
+        1792
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyValue": "={{ $(\"1h Reminder and Brief Due\").item.json.id }}"
+            }
+          ]
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "brief_sent": true,
+            "reminder_1h_sent": true,
+            "reminder_24h_sent": true,
+            "pre_call_brief": "={{ $(\"Write Pre-call Brief\").item.json.output }}"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "66348b22-2c11-49a8-92d0-e758bfeb9179",
+      "name": "Save Brief and Flags",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        1520,
+        1792
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "combinator": "and",
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 1
+          },
+          "conditions": [
+            {
+              "leftValue": "={{ $now.diff(DateTime.fromISO($json.meeting_time), \"minutes\").minutes }}",
+              "rightValue": 45,
+              "operator": {
+                "type": "number",
+                "operation": "gte"
+              }
+            },
+            {
+              "leftValue": "={{ $json.outreach_status }}",
+              "rightValue": "awaiting_call_outcome",
+              "operator": {
+                "type": "string",
+                "operation": "notEquals"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "0dd22701-d92d-4f10-ae59-e40c0fde5735",
+      "name": "Call Is Over",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.4,
+      "position": [
+        608,
+        1856
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyValue": "={{ $json.id }}"
+            }
+          ]
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "outreach_status": "awaiting_call_outcome"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "71994206-4799-4a01-8975-cad3f1d7ee89",
+      "name": "Mark Awaiting Outcome",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        976,
+        1856
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "sendAndWait",
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "kit1-sales"
+        },
+        "message": "=How did the call with *{{ $(\"Call Is Over\").item.json.contact_name }}* ({{ $(\"Call Is Over\").item.json.company_name }}) go? Choose the outcome and paste your notes or the call transcript so the proposal can be drafted.",
+        "responseType": "customForm",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Outcome",
+              "fieldType": "dropdown",
+              "fieldName": "outcome",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "Proposal needed"
+                  },
+                  {
+                    "option": "No-show"
+                  },
+                  {
+                    "option": "Not a fit"
+                  },
+                  {
+                    "option": "Nurture"
+                  }
+                ]
+              },
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Call notes (5 bullets is enough)",
+              "fieldType": "textarea",
+              "fieldName": "notes"
+            },
+            {
+              "fieldLabel": "Call transcript (optional)",
+              "fieldType": "textarea",
+              "fieldName": "transcript"
+            }
+          ]
+        },
+        "options": {
+          "messageButtonLabel": "Log outcome",
+          "responseFormTitle": "Call outcome"
+        }
+      },
+      "id": "cae4f914-132d-46c2-b235-ed45691667b9",
+      "name": "Ask Rep for Call Outcome",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.7,
+      "position": [
+        1200,
+        1856
+      ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "loose",
+                  "version": 1
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.data?.outcome ?? $json.outcome }}",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "rightValue": "Proposal needed"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "loose",
+                  "version": 1
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.data?.outcome ?? $json.outcome }}",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "rightValue": "No-show"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "loose",
+                  "version": 1
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.data?.outcome ?? $json.outcome }}",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "rightValue": "Not a fit"
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra",
+          "renameFallbackOutput": "Nurture"
+        }
+      },
+      "id": "f47dab2c-504c-477e-8e1b-2532c5bc79fa",
+      "name": "Route by Call Outcome",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        1424,
+        1824
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyValue": "={{ $(\"Call Is Over\").item.json.id }}"
+            }
+          ]
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "stage": "Proposal needed",
+            "outreach_status": "call_held",
+            "call_notes": "={{ \"NOTES:\\n\" + ($json.data?.notes ?? $json.notes ?? \"\") + \"\\n\\nTRANSCRIPT:\\n\" + ($json.data?.transcript ?? $json.transcript ?? \"\") }}"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "f703d2ac-c92f-4608-b3fa-3eaebbc14bbd",
+      "name": "Set Proposal Needed",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        1648,
+        1568
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 1
+          },
+          "conditions": [
+            {
+              "leftValue": "={{ Number($(\"Call Is Over\").item.json.sequence_step ?? 0) }}",
+              "rightValue": 1,
+              "operator": {
+                "type": "number",
+                "operation": "lt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "9729777a-096d-487a-a4fa-372a4e219294",
+      "name": "First No-show?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1648,
+        1760
+      ]
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $(\"Call Is Over\").item.json.contact_email }}",
+        "subject": "Sorry we missed each other",
+        "emailType": "text",
+        "message": "=Hi {{ ($(\"Call Is Over\").item.json.contact_name ?? \"\").split(\" \")[0] }}, looks like we missed each other today — no problem. If you would still like to talk, grab another time here: https://calendar.app.google/REPLACE-WITH-YOUR-BOOKING-PAGE\n\nYour Name",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "id": "09f1cd39-8f75-4dfd-9c6e-bf3bbfee138a",
+      "name": "Send Reschedule Link",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        1872,
+        1712
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyValue": "={{ $(\"Call Is Over\").item.json.id }}"
+            }
+          ]
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "stage": "Interested",
+            "outreach_status": "booking_link_sent",
+            "sequence_step": 1,
+            "last_contacted_at": "={{ $now.toISO() }}",
+            "meeting_time": "={{ null }}"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "53b653cb-ec1a-48d9-9943-d4a9bcd9968c",
+      "name": "Back to Interested",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        2096,
+        1712
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyValue": "={{ $(\"Call Is Over\").item.json.id }}"
+            }
+          ]
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "stage": "Nurture",
+            "outreach_status": "nurture",
+            "nurture_until": "={{ $now.plus({ days: 90 }).toISO() }}",
+            "call_notes": "={{ $json.data?.notes ?? $json.notes ?? \"\" }}"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "90e086e8-fd7f-4e74-add5-8e962067468a",
+      "name": "Nurture After Call",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        1872,
+        2048
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyValue": "={{ $(\"Call Is Over\").item.json.id }}"
+            }
+          ]
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "stage": "Disqualified",
+            "outreach_status": "closed",
+            "lost_reason": "={{ \"Not a fit after call: \" + ($json.data?.notes ?? $json.notes ?? \"\") }}"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "9fe5b851-268e-463e-b909-987093ee0af7",
+      "name": "Disqualify After Call",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        1648,
+        1952
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 10 * * 1-5"
+            }
+          ]
+        }
+      },
+      "id": "d960967e-cdce-4492-99fc-af81926f24bc",
+      "name": "Weekdays 10am: Nudges",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        0,
+        2272
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "stage",
+              "keyValue": "Interested"
+            },
+            {
+              "keyName": "last_contacted_at",
+              "condition": "lte",
+              "keyValue": "={{ $now.minus({ days: 2 }).toISO() }}"
+            }
+          ]
+        },
+        "returnAll": true
+      },
+      "id": "344d75a3-992c-41da-a727-6306d0a291f6",
+      "name": "Get Silent Interested Leads",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        272,
+        2496
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "combinator": "or",
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 1
+          },
+          "conditions": [
+            {
+              "leftValue": "={{ $json.outreach_status }}",
+              "rightValue": "qualifying_sent",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            },
+            {
+              "leftValue": "={{ $json.outreach_status }}",
+              "rightValue": "booking_link_sent",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "1bfe22df-288f-4110-90e8-0484ef4faf54",
+      "name": "Waiting on Their Reply",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.4,
+      "position": [
+        496,
+        2496
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 1
+          },
+          "conditions": [
+            {
+              "leftValue": "={{ Number($json.sequence_step ?? 0) }}",
+              "rightValue": 2,
+              "operator": {
+                "type": "number",
+                "operation": "lt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "8c1b185d-be2b-4b3b-8286-8e32480d7528",
+      "name": "Fewer Than 2 Nudges?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        720,
+        2496
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "reply",
+        "messageId": "={{ $json.gmail_message_id }}",
+        "emailType": "text",
+        "message": "=Hi {{ ($json.contact_name ?? \"\").split(\" \")[0] }}, just bumping this up in case it got buried. {{ $json.outreach_status === \"booking_link_sent\" ? \"Here is the booking link again: https://calendar.app.google/REPLACE-WITH-YOUR-BOOKING-PAGE\" : \"A one-line answer to each question is plenty.\" }}\n\nYour Name",
+        "options": {
+          "appendAttribution": false,
+          "replyToSenderOnly": false
+        }
+      },
+      "id": "dda7504a-0706-41da-95cb-32ea114178b4",
+      "name": "Send Gentle Nudge",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        944,
+        2400
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyValue": "={{ $(\"Waiting on Their Reply\").item.json.id }}"
+            }
+          ]
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "sequence_step": "={{ Number($(\"Waiting on Their Reply\").item.json.sequence_step ?? 0) + 1 }}",
+            "last_contacted_at": "={{ $now.toISO() }}"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "8a148458-3eaf-4095-afd0-8fde1f270bad",
+      "name": "Count Nudge",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        1168,
+        2400
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyValue": "={{ $json.id }}"
+            }
+          ]
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "stage": "Nurture",
+            "outreach_status": "nurture",
+            "nurture_until": "={{ $now.plus({ days: 60 }).toISO() }}"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "8cf05740-5919-420a-8b4b-a4b3f6033a6e",
+      "name": "Nurture After 2 Nudges",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        944,
+        2592
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Automation 3 — Qualifier and meeting booker\nReplace the placeholders in the email nodes before going live: **booking link** (Google Calendar appointment page), **resource link**, **Your Name**.\n\n• Interested leads (from A2 or the website form) get 4 qualifying questions within 5 min.\n• Claude scores the answers and routes: booking link with 3 free times / nurture / close-out / hand to rep.\n• A new event on the rep calendar with the lead as guest marks *Meeting booked* and confirms.\n• Reminders 24h and 1h before; brief to Slack 1h before.\n• 45 min after the call, the rep logs the outcome in Slack → *Proposal needed* feeds A4.",
+        "height": 224,
+        "width": 688,
+        "color": 4
+      },
+      "id": "1866d930-92a5-4a3d-9823-7570c99c9746",
+      "name": "Sticky Note 577e84bd",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -64,
+        -432
+      ]
+    }
+  ]
+}

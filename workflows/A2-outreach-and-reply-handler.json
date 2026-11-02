@@ -1,0 +1,2117 @@
+{
+  "name": "A2 Outreach and Reply Handler",
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "connections": {
+    "Weekdays 8am: Draft Sequences": {
+      "main": [
+        [
+          {
+            "node": "Outreach Settings",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Outreach Settings": {
+      "main": [
+        [
+          {
+            "node": "Get Leads Ready for Outreach",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Leads Ready for Outreach": {
+      "main": [
+        [
+          {
+            "node": "Write Email Sequence",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Write Email Sequence": {
+      "main": [
+        [
+          {
+            "node": "Save Drafts to Lead",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Claude (Writer)": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Write Email Sequence",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sequence Format": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Write Email Sequence",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save Drafts to Lead": {
+      "main": [
+        [
+          {
+            "node": "Tone Approval Required?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tone Approval Required?": {
+      "main": [
+        [
+          {
+            "node": "Ask Client to Approve Tone",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ask Client to Approve Tone": {
+      "main": [
+        [
+          {
+            "node": "Approved?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Approved?": {
+      "main": [
+        [
+          {
+            "node": "Activate Approved Sequences",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Explain How to Edit Drafts",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Hourly 9-5 Weekdays: Send": {
+      "main": [
+        [
+          {
+            "node": "Get Emails Due Now",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Emails Due Now": {
+      "main": [
+        [
+          {
+            "node": "Pick This Step Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pick This Step Email": {
+      "main": [
+        [
+          {
+            "node": "First Email?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "First Email?": {
+      "main": [
+        [
+          {
+            "node": "Send First Email",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send Follow-up in Thread",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send First Email": {
+      "main": [
+        [
+          {
+            "node": "Record First Send",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Record First Send": {
+      "main": [
+        [
+          {
+            "node": "Update Lead After Send",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Follow-up in Thread": {
+      "main": [
+        [
+          {
+            "node": "Record Follow-up Send",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Record Follow-up Send": {
+      "main": [
+        [
+          {
+            "node": "Update Lead After Send",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "New Reply in Inbox": {
+      "main": [
+        [
+          {
+            "node": "Find Lead by Thread or Sender",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Find Lead by Thread or Sender": {
+      "main": [
+        [
+          {
+            "node": "Only Outreach-Stage Replies",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Only Outreach-Stage Replies": {
+      "main": [
+        [
+          {
+            "node": "Classify Reply",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Classify Reply": {
+      "main": [
+        [
+          {
+            "node": "Route by Reply Type",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Claude (Classifier)": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Classify Reply",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Reply Format": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Classify Reply",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Route by Reply Type": {
+      "main": [
+        [
+          {
+            "node": "Mark Interested",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Rep Approves Answer",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Move to Nurture",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Add Referred Contact",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Mark Do Not Contact",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Pause Until Return Date",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Mark Email Invalid",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send Unclear Reply to Rep",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mark Interested": {
+      "main": [
+        [
+          {
+            "node": "Mark Reply as Handled",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rep Approves Answer": {
+      "main": [
+        [
+          {
+            "node": "Answer Approved?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Answer Approved?": {
+      "main": [
+        [
+          {
+            "node": "Send Approved Answer",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Log Question Handled",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Approved Answer": {
+      "main": [
+        [
+          {
+            "node": "Log Question Handled",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Log Question Handled": {
+      "main": [
+        [
+          {
+            "node": "Mark Reply as Handled",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Move to Nurture": {
+      "main": [
+        [
+          {
+            "node": "Mark Reply as Handled",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add Referred Contact": {
+      "main": [
+        [
+          {
+            "node": "Close Original as Referral",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Close Original as Referral": {
+      "main": [
+        [
+          {
+            "node": "Mark Reply as Handled",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mark Do Not Contact": {
+      "main": [
+        [
+          {
+            "node": "Add to Exclusion List",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add to Exclusion List": {
+      "main": [
+        [
+          {
+            "node": "Mark Reply as Handled",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pause Until Return Date": {
+      "main": [
+        [
+          {
+            "node": "Mark Reply as Handled",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mark Email Invalid": {
+      "main": [
+        [
+          {
+            "node": "Flag Bounce for Second Contact",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Flag Bounce for Second Contact": {
+      "main": [
+        [
+          {
+            "node": "Mark Reply as Handled",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Unclear Reply to Rep": {
+      "main": [
+        [
+          {
+            "node": "Stop Sequence (Unclear)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Stop Sequence (Unclear)": {
+      "main": [
+        [
+          {
+            "node": "Mark Reply as Handled",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Daily 6am: Nurture Re-entry": {
+      "main": [
+        [
+          {
+            "node": "Get Nurture Leads Due",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Nurture Leads Due": {
+      "main": [
+        [
+          {
+            "node": "Re-enter Outreach",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 8 * * 1-5"
+            }
+          ]
+        }
+      },
+      "id": "4309b698-ebbf-4d7d-9924-8247410dc9f5",
+      "name": "Weekdays 8am: Draft Sequences",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "os-approve",
+              "name": "require_approval",
+              "value": true,
+              "type": "boolean"
+            },
+            {
+              "id": "os-sender",
+              "name": "sender_name",
+              "value": "Your Name",
+              "type": "string"
+            },
+            {
+              "id": "os-offer",
+              "name": "offer",
+              "value": "We help growing companies outsource bookkeeping so finance work never piles up while they hire.",
+              "type": "string"
+            },
+            {
+              "id": "os-daily",
+              "name": "new_leads_per_day",
+              "value": 20,
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "0620ec1c-c749-4d0d-ab49-5ba7d013e8cb",
+      "name": "Outreach Settings",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        224,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "stage",
+              "keyValue": "Ready for outreach"
+            },
+            {
+              "keyName": "outreach_status",
+              "condition": "isEmpty"
+            },
+            {
+              "keyName": "do_not_contact",
+              "condition": "isFalse"
+            }
+          ]
+        },
+        "limit": "={{ $json.new_leads_per_day }}"
+      },
+      "id": "14bebe3f-e477-4604-aca5-12060e6b3f1c",
+      "name": "Get Leads Ready for Outreach",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        496,
+        128
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Our offer: {{ $(\"Outreach Settings\").first().json.offer }}\nSender name: {{ $(\"Outreach Settings\").first().json.sender_name }}\n\nLead: {{ $json.contact_name }}, {{ $json.contact_title }} at {{ $json.company_name }}\nFit: {{ $json.score_reason }}\nResearch notes:\n{{ $json.research_notes }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "You write short, plain-text B2B cold emails. email_1: under 90 words, opens with one specific observation about their business from the research notes, names the problem it implies, gives one line on the outcome we deliver, ends with a soft ask (e.g. \"Worth a quick chat?\"). followup_1 (day 3): 2-3 sentences, adds value. followup_2 (day 7): a new angle. followup_3 (day 14): a short, polite closing note. No links, no emojis, no hype words. Sign each email with the sender name. Write a lowercase-friendly subject under 6 words.",
+          "batching": {
+            "batchSize": 3,
+            "delayBetweenBatches": 500
+          }
+        }
+      },
+      "id": "6190dc31-8e3c-45be-b00a-e73d3ab8fee3",
+      "name": "Write Email Sequence",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        720,
+        128
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "claude-sonnet-5",
+          "cachedResultName": "Claude Sonnet 5"
+        },
+        "options": {
+          "maxTokensToSample": 2048
+        }
+      },
+      "id": "9a3077a6-7aac-4608-9846-2c02e0536ea7",
+      "name": "Claude (Writer)",
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.6,
+      "position": [
+        736,
+        352
+      ]
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{ \"subject\": \"Finance hire at Acme\", \"email_1\": \"Hi Dana, ...\", \"followup_1\": \"Hi Dana, ...\", \"followup_2\": \"Hi Dana, ...\", \"followup_3\": \"Hi Dana, ...\" }"
+      },
+      "id": "476d1ddd-5e0d-4e60-9ee9-b39e40f31919",
+      "name": "Sequence Format",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        864,
+        352
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyValue": "={{ $(\"Get Leads Ready for Outreach\").item.json.id }}"
+            }
+          ]
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "email_drafts": "={{ JSON.stringify($json.output) }}",
+            "outreach_status": "={{ $(\"Outreach Settings\").first().json.require_approval ? \"pending_approval\" : \"active\" }}",
+            "sequence_step": 0,
+            "next_send_at": "={{ $now.toISO() }}"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "7dad0b53-d244-4421-bb78-d2268a3ad849",
+      "name": "Save Drafts to Lead",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        1072,
+        128
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 1
+          },
+          "conditions": [
+            {
+              "leftValue": "={{ $(\"Outreach Settings\").first().json.require_approval }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "08596eb5-1063-48b6-aaa6-dcaaa40fc55f",
+      "name": "Tone Approval Required?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1024,
+        224
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "operation": "sendAndWait",
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "kit1-sales"
+        },
+        "message": "=*Kit 1 · New outreach drafts ({{ $(\"Write Email Sequence\").all().length }} leads)*\nPlease check the tone. Samples:\n\n{{ $(\"Write Email Sequence\").all().slice(0, 3).map((d, i) => \"*\" + $(\"Get Leads Ready for Outreach\").all()[i].json.company_name + \"* – _\" + d.json.output?.subject + \"_\\n\" + d.json.output?.email_1).join(\"\\n\\n---\\n\\n\") }}\n\nApprove to start sending. After the first batch, set *require_approval* to false in Outreach Settings.",
+        "approvalOptions": {
+          "values": {
+            "approvalType": "double",
+            "approveLabel": "Approve and send",
+            "disapproveLabel": "Needs changes"
+          }
+        },
+        "options": {
+          "limitWaitTime": {
+            "values": {
+              "resumeAmount": 2,
+              "resumeUnit": "days"
+            }
+          }
+        }
+      },
+      "id": "5eed3b27-bea8-4268-8e8b-24ab7f91bce9",
+      "name": "Ask Client to Approve Tone",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.7,
+      "position": [
+        1248,
+        224
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 1
+          },
+          "conditions": [
+            {
+              "leftValue": "={{ $json.data?.approved }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "ddcffaab-3249-4e1c-94c2-a5d3a49bae86",
+      "name": "Approved?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1472,
+        224
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "outreach_status",
+              "keyValue": "pending_approval"
+            }
+          ]
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "outreach_status": "active",
+            "next_send_at": "={{ $now.toISO() }}"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "344abdc4-2fea-4c4a-aa43-4f7bceb17a5d",
+      "name": "Activate Approved Sequences",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        1696,
+        128
+      ]
+    },
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "kit1-sales"
+        },
+        "text": "Drafts are on hold (outreach_status = pending_approval). Edit the tone in *Outreach Settings → offer* or the writer prompt, clear email_drafts and outreach_status on those rows to redraft, or set outreach_status to active to send as-is.",
+        "otherOptions": {}
+      },
+      "id": "d51f0bff-3c9c-408a-801c-657244b4ff06",
+      "name": "Explain How to Edit Drafts",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.7,
+      "position": [
+        1696,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "15 9-17 * * 1-5"
+            }
+          ]
+        }
+      },
+      "id": "f4e34721-641c-4188-852c-8314443767ea",
+      "name": "Hourly 9-5 Weekdays: Send",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        0,
+        224
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "outreach_status",
+              "keyValue": "active"
+            },
+            {
+              "keyName": "next_send_at",
+              "condition": "lte",
+              "keyValue": "={{ $now.toISO() }}"
+            },
+            {
+              "keyName": "do_not_contact",
+              "condition": "isFalse"
+            }
+          ]
+        },
+        "limit": 6
+      },
+      "id": "af233886-d058-4dff-868b-8e50811b6d46",
+      "name": "Get Emails Due Now",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        272,
+        448
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "pe-step",
+              "name": "step",
+              "value": "={{ Number($json.sequence_step ?? 0) }}",
+              "type": "number"
+            },
+            {
+              "id": "pe-subject",
+              "name": "subject",
+              "value": "={{ JSON.parse($json.email_drafts).subject }}",
+              "type": "string"
+            },
+            {
+              "id": "pe-body",
+              "name": "body",
+              "value": "={{ (() => { const d = JSON.parse($json.email_drafts); return [d.email_1, d.followup_1, d.followup_2, d.followup_3][Number($json.sequence_step ?? 0)] ?? \"\"; })() }}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "id": "3e22e25d-952e-4a29-b5bb-5a17778e935f",
+      "name": "Pick This Step Email",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        496,
+        448
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 1
+          },
+          "conditions": [
+            {
+              "leftValue": "={{ $json.step }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "fd1c5953-2aad-4710-86b7-676aeabfa328",
+      "name": "First Email?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        720,
+        448
+      ]
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.contact_email }}",
+        "subject": "={{ $json.subject }}",
+        "emailType": "text",
+        "message": "={{ $json.body }}",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "id": "023621fb-dc5c-477e-98a1-4d46fe60d727",
+      "name": "Send First Email",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        944,
+        352
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "af-id",
+              "name": "lead_id",
+              "value": "={{ $(\"Pick This Step Email\").item.json.id }}",
+              "type": "number"
+            },
+            {
+              "id": "af-step",
+              "name": "step",
+              "value": 0,
+              "type": "number"
+            },
+            {
+              "id": "af-thr",
+              "name": "thread_id",
+              "value": "={{ $json.threadId }}",
+              "type": "string"
+            },
+            {
+              "id": "af-msg",
+              "name": "message_id",
+              "value": "={{ $json.id }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "6902f644-e6a7-4af2-bf81-07796002a003",
+      "name": "Record First Send",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1168,
+        352
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyValue": "={{ $json.lead_id }}"
+            }
+          ]
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "stage": "Contacted",
+            "sequence_step": "={{ $json.step + 1 }}",
+            "last_contacted_at": "={{ $now.toISO() }}",
+            "gmail_thread_id": "={{ $json.thread_id }}",
+            "gmail_message_id": "={{ $json.message_id }}",
+            "next_send_at": "={{ $now.plus({ days: [2, 4, 7, 7][$json.step] }).toISO() }}",
+            "outreach_status": "={{ $json.step >= 3 ? \"sequence_complete\" : \"active\" }}",
+            "nurture_until": "={{ $json.step >= 3 ? $now.plus({ days: 90 }).toISO() : null }}"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "cb5142ba-26b5-48c5-b54c-95fefc2783fd",
+      "name": "Update Lead After Send",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        1392,
+        448
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "reply",
+        "messageId": "={{ $json.gmail_message_id }}",
+        "emailType": "text",
+        "message": "={{ $json.body }}",
+        "options": {
+          "appendAttribution": false,
+          "replyToSenderOnly": false
+        }
+      },
+      "id": "99746983-cd50-4afb-9c00-98df8d860cea",
+      "name": "Send Follow-up in Thread",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        944,
+        544
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ab-id",
+              "name": "lead_id",
+              "value": "={{ $(\"Pick This Step Email\").item.json.id }}",
+              "type": "number"
+            },
+            {
+              "id": "ab-step",
+              "name": "step",
+              "value": "={{ $(\"Pick This Step Email\").item.json.step }}",
+              "type": "number"
+            },
+            {
+              "id": "ab-thr",
+              "name": "thread_id",
+              "value": "={{ $(\"Pick This Step Email\").item.json.gmail_thread_id }}",
+              "type": "string"
+            },
+            {
+              "id": "ab-msg",
+              "name": "message_id",
+              "value": "={{ $(\"Pick This Step Email\").item.json.gmail_message_id }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "d1a38636-53d4-4aa6-bd4c-f4cdd8def7d6",
+      "name": "Record Follow-up Send",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1168,
+        544
+      ]
+    },
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyX",
+              "value": 5,
+              "unit": "minutes"
+            }
+          ]
+        },
+        "simple": false,
+        "filters": {
+          "q": "in:inbox -from:me newer_than:3d",
+          "readStatus": "unread"
+        },
+        "options": {}
+      },
+      "id": "370d4018-e6fa-44ed-93bc-9b4a5f5a0f56",
+      "name": "New Reply in Inbox",
+      "type": "n8n-nodes-base.gmailTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        0,
+        1200
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "gmail_thread_id",
+              "keyValue": "={{ $json.threadId }}"
+            },
+            {
+              "keyName": "contact_email",
+              "keyValue": "={{ ($json.from?.value?.[0]?.address ?? \"none\").toLowerCase() }}"
+            }
+          ]
+        },
+        "limit": 1
+      },
+      "id": "61edd135-bcd6-4769-9c99-0ceb03d8ed6d",
+      "name": "Find Lead by Thread or Sender",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        272,
+        1312
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "combinator": "and",
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 1
+          },
+          "conditions": [
+            {
+              "leftValue": "={{ $json.stage }}",
+              "rightValue": "Contacted",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "d9f7731a-0943-40e2-84d7-5780279286b8",
+      "name": "Only Outreach-Stage Replies",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.4,
+      "position": [
+        496,
+        1312
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Lead: {{ $json.contact_name }} at {{ $json.company_name }}\nOur notes: {{ $json.research_notes }}\n\nTheir reply (subject: {{ $(\"New Reply in Inbox\").item.json.subject }}):\n{{ ($(\"New Reply in Inbox\").item.json.text ?? \"\").slice(0, 3000) }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "Classify a reply to a sales email. category must be exactly one of: interested, question, not_now, referral, unsubscribe, out_of_office, bounce, unclear. Use \"question\" for questions or objections such as price. Use \"bounce\" for delivery failure notices. Use \"unclear\" whenever you are not confident. return_date: ISO date (YYYY-MM-DD) if they gave a date to come back or an out-of-office return date, else empty string. referral_name and referral_email: only for referrals, else empty strings. suggested_answer: only for \"question\", a short, friendly reply that answers honestly and offers a 20-minute call; otherwise empty string."
+        }
+      },
+      "id": "140ebe5d-c7c2-43fe-a029-a2a3708d7e5f",
+      "name": "Classify Reply",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        720,
+        1312
+      ]
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "claude-sonnet-5",
+          "cachedResultName": "Claude Sonnet 5"
+        },
+        "options": {
+          "maxTokensToSample": 1024
+        }
+      },
+      "id": "dfcfa015-2b2e-42d0-ad3f-67f26e5193ee",
+      "name": "Claude (Classifier)",
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.6,
+      "position": [
+        736,
+        1536
+      ]
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{ \"category\": \"interested\", \"return_date\": \"2026-11-15\", \"referral_name\": \"Priya Shah\", \"referral_email\": \"priya@acme.com\", \"suggested_answer\": \"Hi Dana, ...\", \"reason\": \"short explanation\" }"
+      },
+      "id": "aba4ef88-b599-4a2d-96ea-6bdbfb0a19af",
+      "name": "Reply Format",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        864,
+        1536
+      ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 1
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.output.category }}",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "rightValue": "interested"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 1
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.output.category }}",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "rightValue": "question"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 1
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.output.category }}",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "rightValue": "not_now"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 1
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.output.category }}",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "rightValue": "referral"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 1
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.output.category }}",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "rightValue": "unsubscribe"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 1
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.output.category }}",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "rightValue": "out_of_office"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 1
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.output.category }}",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "rightValue": "bounce"
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra",
+          "renameFallbackOutput": "Unclear"
+        }
+      },
+      "id": "bade2102-5d00-45b5-97d3-83a4c16058fc",
+      "name": "Route by Reply Type",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        752,
+        1104
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyValue": "={{ $(\"Find Lead by Thread or Sender\").item.json.id }}"
+            }
+          ]
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "stage": "Interested",
+            "outreach_status": "replied",
+            "reply_category": "interested",
+            "sequence_step": 0,
+            "gmail_message_id": "={{ $(\"New Reply in Inbox\").item.json.id }}",
+            "gmail_thread_id": "={{ $(\"New Reply in Inbox\").item.json.threadId }}"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "9b274c84-e427-4828-93b0-b923a65515c4",
+      "name": "Mark Interested",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        1648,
+        448
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "markAsRead",
+        "messageId": "={{ $(\"New Reply in Inbox\").item.json.id }}"
+      },
+      "id": "56cd39ff-cc56-4a1f-b42a-b88ceef49031",
+      "name": "Mark Reply as Handled",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        2384,
+        1184
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "sendAndWait",
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "kit1-sales"
+        },
+        "message": "=*Question from {{ $(\"Find Lead by Thread or Sender\").item.json.contact_name }} ({{ $(\"Find Lead by Thread or Sender\").item.json.company_name }})*\n> {{ ($(\"New Reply in Inbox\").item.json.text ?? \"\").slice(0, 600) }}\n\n*Suggested answer:*\n{{ $json.output.suggested_answer }}",
+        "approvalOptions": {
+          "values": {
+            "approvalType": "double",
+            "approveLabel": "Send this answer",
+            "disapproveLabel": "I'll reply myself"
+          }
+        },
+        "options": {
+          "limitWaitTime": {
+            "values": {
+              "resumeUnit": "days"
+            }
+          }
+        }
+      },
+      "id": "3033ce77-b74f-4561-b9dd-6433739f093b",
+      "name": "Rep Approves Answer",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.7,
+      "position": [
+        976,
+        688
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "leftValue": "={{ $json.data?.approved }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              },
+              "id": "6300de87-ec09-4c98-8237-1bc92a6c57e8"
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "83375379-c660-4329-b2ed-394d3874216f",
+      "name": "Answer Approved?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1200,
+        688
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "reply",
+        "messageId": "={{ $(\"New Reply in Inbox\").item.json.id }}",
+        "emailType": "text",
+        "message": "={{ $(\"Classify Reply\").item.json.output.suggested_answer }}",
+        "options": {
+          "appendAttribution": false,
+          "replyToSenderOnly": true
+        }
+      },
+      "id": "50923a7b-e913-4a34-84b3-c1e0d817e8dd",
+      "name": "Send Approved Answer",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        1424,
+        624
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyValue": "={{ $(\"Find Lead by Thread or Sender\").item.json.id }}"
+            }
+          ]
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "outreach_status": "replied",
+            "reply_category": "question"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "6466cbb6-5101-422c-9009-ae9663a3b560",
+      "name": "Log Question Handled",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        1648,
+        688
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyValue": "={{ $(\"Find Lead by Thread or Sender\").item.json.id }}"
+            }
+          ]
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "stage": "Nurture",
+            "outreach_status": "replied",
+            "reply_category": "not_now",
+            "nurture_until": "={{ $json.output.return_date ? DateTime.fromISO($json.output.return_date).toISO() : $now.plus({ days: 90 }).toISO() }}"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "e96d170d-85ab-4dd7-b666-9e64bc0be1ce",
+      "name": "Move to Nurture",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        1648,
+        912
+      ]
+    },
+    {
+      "parameters": {
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "company_name": "={{ $(\"Find Lead by Thread or Sender\").item.json.company_name }}",
+            "domain": "={{ $(\"Find Lead by Thread or Sender\").item.json.domain }}",
+            "industry": "={{ $(\"Find Lead by Thread or Sender\").item.json.industry }}",
+            "contact_name": "={{ $json.output.referral_name }}",
+            "contact_email": "={{ $json.output.referral_email }}",
+            "stage": "={{ $json.output.referral_email ? \"Ready for outreach\" : \"Researched\" }}",
+            "fit_score": "={{ $(\"Find Lead by Thread or Sender\").item.json.fit_score }}",
+            "score_reason": "={{ $(\"Find Lead by Thread or Sender\").item.json.score_reason }}",
+            "research_notes": "=Referred by {{ $(\"Find Lead by Thread or Sender\").item.json.contact_name }} — mention this in the first line.\n{{ $(\"Find Lead by Thread or Sender\").item.json.research_notes }}",
+            "sequence_step": 0,
+            "do_not_contact": false,
+            "source": "referral"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "a3d974d9-1040-45c2-b751-f8addf8c3200",
+      "name": "Add Referred Contact",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        1424,
+        1104
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyValue": "={{ $(\"Find Lead by Thread or Sender\").item.json.id }}"
+            }
+          ]
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "outreach_status": "replied",
+            "reply_category": "referral"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "d35c8017-7620-440e-be33-c50b904ee396",
+      "name": "Close Original as Referral",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        1648,
+        1104
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "contact_email",
+              "keyValue": "={{ $(\"Find Lead by Thread or Sender\").item.json.contact_email }}"
+            }
+          ]
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "do_not_contact": true,
+            "outreach_status": "stopped",
+            "stage": "Lost",
+            "lost_reason": "Unsubscribed",
+            "reply_category": "unsubscribe"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "5029dfd5-687e-431a-9c02-2b103c041055",
+      "name": "Mark Do Not Contact",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        1424,
+        1296
+      ]
+    },
+    {
+      "parameters": {
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Exclusions"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "email": "={{ $(\"Find Lead by Thread or Sender\").item.json.contact_email }}",
+            "domain": "",
+            "reason": "Unsubscribed"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "70382f32-807b-42dd-8753-ad64e25c36c9",
+      "name": "Add to Exclusion List",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        1648,
+        1296
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyValue": "={{ $(\"Find Lead by Thread or Sender\").item.json.id }}"
+            }
+          ]
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "reply_category": "out_of_office",
+            "next_send_at": "={{ $json.output.return_date ? DateTime.fromISO($json.output.return_date).plus({ days: 1 }).set({ hour: 9 }).toISO() : $now.plus({ days: 7 }).toISO() }}"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "21a3e8e6-af09-43cb-bbc7-b4aeb4dc49fb",
+      "name": "Pause Until Return Date",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        1648,
+        1488
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyValue": "={{ $(\"Find Lead by Thread or Sender\").item.json.id }}"
+            }
+          ]
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "outreach_status": "bounced",
+            "reply_category": "bounce",
+            "stage": "Lost",
+            "lost_reason": "Email bounced"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "2dd8a890-1b0a-4699-9c8d-9d6e8cfdbc0f",
+      "name": "Mark Email Invalid",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        1424,
+        1680
+      ]
+    },
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "kit1-sales"
+        },
+        "text": "=Bounce: {{ $(\"Find Lead by Thread or Sender\").item.json.contact_email }} ({{ $(\"Find Lead by Thread or Sender\").item.json.company_name }}). Any other contact at this company keeps its sequence; add a new contact to Kit1 Leads at Ready for outreach to try again.",
+        "otherOptions": {}
+      },
+      "id": "2130e1d1-af4b-404c-9d92-e251b2130983",
+      "name": "Flag Bounce for Second Contact",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.7,
+      "position": [
+        1648,
+        1680
+      ]
+    },
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "kit1-sales"
+        },
+        "text": "=:eyes: Unclear reply from {{ $(\"Find Lead by Thread or Sender\").item.json.contact_name }} ({{ $(\"Find Lead by Thread or Sender\").item.json.company_name }}). Sequence stopped — please reply yourself.\n> {{ ($(\"New Reply in Inbox\").item.json.text ?? \"\").slice(0, 800) }}",
+        "otherOptions": {}
+      },
+      "id": "14b04a09-3036-4a7d-a806-6ffdcea9363c",
+      "name": "Send Unclear Reply to Rep",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.7,
+      "position": [
+        1424,
+        1872
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyValue": "={{ $(\"Find Lead by Thread or Sender\").item.json.id }}"
+            }
+          ]
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "outreach_status": "replied",
+            "reply_category": "unclear"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "4a7fafe0-905c-40b2-9c40-a65a23eccdd5",
+      "name": "Stop Sequence (Unclear)",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        1648,
+        1872
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 6
+            }
+          ]
+        }
+      },
+      "id": "4b0e04a1-08d6-46a8-8558-30d3316fa5cd",
+      "name": "Daily 6am: Nurture Re-entry",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        0,
+        2096
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "nurture_until",
+              "condition": "lte",
+              "keyValue": "={{ $now.toISO() }}"
+            },
+            {
+              "keyName": "do_not_contact",
+              "condition": "isFalse"
+            },
+            {
+              "keyName": "stage",
+              "condition": "neq",
+              "keyValue": "Won"
+            },
+            {
+              "keyName": "stage",
+              "condition": "neq",
+              "keyValue": "Lost"
+            }
+          ]
+        },
+        "returnAll": true
+      },
+      "id": "29b46bd4-e88d-4064-853d-827c2935b337",
+      "name": "Get Nurture Leads Due",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        288,
+        2224
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyValue": "={{ $json.id }}"
+            }
+          ]
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "stage": "Ready for outreach",
+            "outreach_status": "={{ null }}",
+            "email_drafts": "={{ null }}",
+            "sequence_step": 0,
+            "nurture_until": "={{ null }}",
+            "gmail_thread_id": "={{ null }}",
+            "gmail_message_id": "={{ null }}",
+            "reply_category": "={{ null }}"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "787097d2-10ba-4913-a99f-a6920b805a5a",
+      "name": "Re-enter Outreach",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        512,
+        2224
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Automation 2 — Outreach and reply handler\n**8am weekdays:** Claude drafts a 4-email sequence for each lead at *Ready for outreach*. First batch waits for tone approval in Slack (turn off `require_approval` in Outreach Settings after that).\n**Hourly 9–5:** sends due emails (max 6/hour). Cadence: day 1, 3, 7, 14.\n**Every 5 min:** reads replies to outreach threads, stops the sequence and routes by type.\n**6am daily:** nurtured leads re-enter outreach.\n\nSetup: Gmail credential for the sending inbox (secondary domain), Slack Bot, `#kit1-sales`.",
+        "height": 224,
+        "width": 672,
+        "color": 4
+      },
+      "id": "a0af2e58-88f4-4939-8922-bed032f1a4eb",
+      "name": "Sticky Note 4e10b51a",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -48,
+        -432
+      ]
+    }
+  ]
+}

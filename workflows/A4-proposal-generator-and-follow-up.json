@@ -1,0 +1,1921 @@
+{
+  "name": "A4 Proposal Generator and Follow-up",
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "connections": {
+    "Every 15 min: Proposals to Draft": {
+      "main": [
+        [
+          {
+            "node": "Packages and Pricing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Packages and Pricing": {
+      "main": [
+        [
+          {
+            "node": "Get Proposals to Draft",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Proposals to Draft": {
+      "main": [
+        [
+          {
+            "node": "Mark Drafting",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mark Drafting": {
+      "main": [
+        [
+          {
+            "node": "Have Call Notes?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Have Call Notes?": {
+      "main": [
+        [
+          {
+            "node": "Use Call Notes",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Ask Rep for 5 Bullets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Use Call Notes": {
+      "main": [
+        [
+          {
+            "node": "Draft Proposal",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Draft Proposal": {
+      "main": [
+        [
+          {
+            "node": "Save Draft Proposal",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Claude (Proposal)": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Draft Proposal",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Proposal Format": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Draft Proposal",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ask Rep for 5 Bullets": {
+      "main": [
+        [
+          {
+            "node": "Use Rep Bullets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Use Rep Bullets": {
+      "main": [
+        [
+          {
+            "node": "Draft Proposal",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save Draft Proposal": {
+      "main": [
+        [
+          {
+            "node": "Rep Reviews Proposal",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rep Reviews Proposal": {
+      "main": [
+        [
+          {
+            "node": "Proposal Approved?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Proposal Approved?": {
+      "main": [
+        [
+          {
+            "node": "Send Proposal to Client",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Ask Rep What to Change",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Proposal to Client": {
+      "main": [
+        [
+          {
+            "node": "Mark Proposal Sent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ask Rep What to Change": {
+      "main": [
+        [
+          {
+            "node": "Queue Redraft",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Weekdays 9am: Proposal Follow-ups": {
+      "main": [
+        [
+          {
+            "node": "Get Open Proposals",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Open Proposals": {
+      "main": [
+        [
+          {
+            "node": "Days Since Sent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Days Since Sent": {
+      "main": [
+        [
+          {
+            "node": "Which Follow-up?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Which Follow-up?": {
+      "main": [
+        [
+          {
+            "node": "Close as Lost (No Reply)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send Day-14 Final Note",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Write Objection Follow-up",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send Day-3 Check-in",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Close as Lost (No Reply)": {
+      "main": [
+        [
+          {
+            "node": "Post Silent Loss",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Day-14 Final Note": {
+      "main": [
+        [
+          {
+            "node": "Log Final Note",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Write Objection Follow-up": {
+      "main": [
+        [
+          {
+            "node": "Send Day-7 Follow-up",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Claude (Follow-up)": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Write Objection Follow-up",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Day-7 Follow-up": {
+      "main": [
+        [
+          {
+            "node": "Log Day-7 Follow-up",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Day-3 Check-in": {
+      "main": [
+        [
+          {
+            "node": "Log Day-3 Check-in",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Client Replied to Proposal": {
+      "main": [
+        [
+          {
+            "node": "Find Deal",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Find Deal": {
+      "main": [
+        [
+          {
+            "node": "Only Open Proposals",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Only Open Proposals": {
+      "main": [
+        [
+          {
+            "node": "Read Client Decision",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Client Decision": {
+      "main": [
+        [
+          {
+            "node": "Route by Decision",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Claude (Decision)": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Read Client Decision",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Decision Format": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Read Client Decision",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Route by Decision": {
+      "main": [
+        [
+          {
+            "node": "Mark Won",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Mark Lost with Reason",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Queue Revision from Client",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send Reply to Rep",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mark Won": {
+      "main": [
+        [
+          {
+            "node": "Post the Win",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Post the Win": {
+      "main": [
+        [
+          {
+            "node": "Mark Proposal Reply as Handled",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mark Lost with Reason": {
+      "main": [
+        [
+          {
+            "node": "Post the Loss",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Post the Loss": {
+      "main": [
+        [
+          {
+            "node": "Mark Proposal Reply as Handled",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Queue Revision from Client": {
+      "main": [
+        [
+          {
+            "node": "Mark Proposal Reply as Handled",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Reply to Rep": {
+      "main": [
+        [
+          {
+            "node": "Mark Proposal Reply as Handled",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "minutes",
+              "minutesInterval": 15
+            }
+          ]
+        }
+      },
+      "id": "ad68f065-898e-4260-8159-f6190ee41d9c",
+      "name": "Every 15 min: Proposals to Draft",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "pp-pk",
+              "name": "packages",
+              "value": "Starter: up to 100 transactions/month, monthly close, $900/month.\nGrowth: up to 500 transactions/month, monthly close in 5 business days, payroll support, $1,800/month.\nScale: up to 1,500 transactions/month, weekly reporting, dedicated accountant, $3,500/month.\nAdd-ons: catch-up bookkeeping $75/hour; sales tax filing $250/month.",
+              "type": "string"
+            },
+            {
+              "id": "pp-rules",
+              "name": "pricing_rules",
+              "value": "Pick the tier by monthly volume. Add-ons only for features they asked for. Standard terms: 12-month agreement, billed monthly, 30-day notice. Rep may discount up to 10%; anything more needs a manager.",
+              "type": "string"
+            },
+            {
+              "id": "pp-max",
+              "name": "max_rep_discount_pct",
+              "value": 10,
+              "type": "number"
+            },
+            {
+              "id": "pp-sign",
+              "name": "esign_note",
+              "value": "To accept, simply reply \"I accept\" to this email and we will send the agreement for signature.",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "bf9875b0-0ed0-4ad5-9603-6e1303a5e18c",
+      "name": "Packages and Pricing",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        224,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "stage",
+              "keyValue": "Proposal needed"
+            },
+            {
+              "keyName": "proposal_text",
+              "condition": "isEmpty"
+            },
+            {
+              "keyName": "outreach_status",
+              "condition": "neq",
+              "keyValue": "drafting_proposal"
+            }
+          ]
+        },
+        "limit": 5
+      },
+      "id": "97836d6e-154b-48dd-a940-626ba62ee131",
+      "name": "Get Proposals to Draft",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        496,
+        224
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyValue": "={{ $json.id }}"
+            }
+          ]
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "outreach_status": "drafting_proposal"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "f925b3fc-99aa-4bc9-91ae-6178f0e661dc",
+      "name": "Mark Drafting",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        720,
+        224
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 1
+          },
+          "conditions": [
+            {
+              "leftValue": "={{ ($(\"Get Proposals to Draft\").item.json.call_notes ?? \"\").replace(/NOTES:|TRANSCRIPT:|\\s/g, \"\").length }}",
+              "rightValue": 60,
+              "operator": {
+                "type": "number",
+                "operation": "gte"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "e35da7fe-58c2-483c-944c-2a96d1de7893",
+      "name": "Have Call Notes?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        944,
+        224
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "uc-id",
+              "name": "lead_id",
+              "value": "={{ $(\"Get Proposals to Draft\").item.json.id }}",
+              "type": "number"
+            },
+            {
+              "id": "uc-notes",
+              "name": "notes",
+              "value": "={{ $(\"Get Proposals to Draft\").item.json.call_notes }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "67166069-77d9-4303-a15f-4d95fd24f8a0",
+      "name": "Use Call Notes",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1168,
+        128
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Client: {{ $(\"Get Proposals to Draft\").item.json.company_name }} — {{ $(\"Get Proposals to Draft\").item.json.contact_name }}\nResearch: {{ $(\"Get Proposals to Draft\").item.json.research_notes }}\nQualification answers: {{ $(\"Get Proposals to Draft\").item.json.qualification_answers }}\n\nCall notes / transcript / revision requests:\n{{ ($json.notes ?? \"\").slice(0, 12000) }}\n\nOur packages:\n{{ $(\"Packages and Pricing\").first().json.packages }}\n\nPricing rules:\n{{ $(\"Packages and Pricing\").first().json.pricing_rules }}\n\nAcceptance instructions to end the proposal with:\n{{ $(\"Packages and Pricing\").first().json.esign_note }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "You write sales proposals from a sales call. First extract the client goals, scope, must-haves, budget signals, timeline and decision makers. Then match their needs to ONE package plus only the add-ons they need, following the pricing rules. If what they need does not fit any package, set custom_scope true and explain in custom_scope_note (the rep will price it). If the notes include a REVISION REQUEST, apply it. proposal_text is plain text with these sections: Your goals (in their words), Our solution, Deliverables, Timeline, Investment, Terms, Next step. cover_email is under 80 words, friendly, signed \"Your Name\". Never invent numbers the notes do not support."
+        }
+      },
+      "id": "b70f51a8-e154-4a66-a4ab-0663f008ff85",
+      "name": "Draft Proposal",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        1024,
+        224
+      ]
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "claude-sonnet-5",
+          "cachedResultName": "Claude Sonnet 5"
+        },
+        "options": {
+          "maxTokensToSample": 4096
+        }
+      },
+      "id": "f1e7318c-5314-4678-a1d5-d1e9c99613d0",
+      "name": "Claude (Proposal)",
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.6,
+      "position": [
+        1040,
+        448
+      ]
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{ \"package\": \"Growth\", \"monthly_price\": 1800, \"discount_pct\": 0, \"custom_scope\": false, \"custom_scope_note\": \"\", \"proposal_text\": \"PROPOSAL FOR ACME FREIGHT\\n\\nYour goals...\", \"cover_email\": \"Hi Dana, ...\", \"summary_for_rep\": \"Growth tier at $1,800/mo, start Dec 1\" }"
+      },
+      "id": "b7d389d9-0932-403f-915c-a64c1f7f90b2",
+      "name": "Proposal Format",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        1168,
+        448
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "sendAndWait",
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "kit1-sales"
+        },
+        "message": "=No call transcript for *{{ $(\"Get Proposals to Draft\").item.json.company_name }}*. Please send 5 bullet points: goals, scope, must-haves, budget signals, timeline and decision makers.",
+        "responseType": "freeText",
+        "options": {
+          "messageButtonLabel": "Add call notes",
+          "responseFormTitle": "Call notes for the proposal"
+        }
+      },
+      "id": "37bcad5c-05e2-46b3-967d-847e55f26bd8",
+      "name": "Ask Rep for 5 Bullets",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.7,
+      "position": [
+        1168,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ur-id",
+              "name": "lead_id",
+              "value": "={{ $(\"Get Proposals to Draft\").item.json.id }}",
+              "type": "number"
+            },
+            {
+              "id": "ur-notes",
+              "name": "notes",
+              "value": "={{ ($(\"Get Proposals to Draft\").item.json.call_notes ?? \"\") + \"\\n\\nREP BULLETS:\\n\" + ($json.data?.text ?? \"\") }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c2731c17-4160-4c98-aae2-4bfdef193377",
+      "name": "Use Rep Bullets",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1392,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyValue": "={{ $(\"Get Proposals to Draft\").item.json.id }}"
+            }
+          ]
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "proposal_text": "={{ $json.output.proposal_text }}",
+            "outreach_status": "proposal_review"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "c42353cd-f047-413d-8aa8-824ac216d73b",
+      "name": "Save Draft Proposal",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        1376,
+        224
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "sendAndWait",
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "kit1-sales"
+        },
+        "message": "={{ ($(\"Draft Proposal\").item.json.output.custom_scope || $(\"Draft Proposal\").item.json.output.discount_pct > $(\"Packages and Pricing\").first().json.max_rep_discount_pct) ? \":rotating_light: *Manager approval needed* — \" + ($(\"Draft Proposal\").item.json.output.custom_scope ? \"custom scope: \" + $(\"Draft Proposal\").item.json.output.custom_scope_note : \"discount \" + $(\"Draft Proposal\").item.json.output.discount_pct + \"%\") + \"\\n\\n\" : \"\" }}*Proposal for {{ $(\"Get Proposals to Draft\").item.json.company_name }}* — {{ $(\"Draft Proposal\").item.json.output.summary_for_rep }}\n\n*Cover email*\n{{ $(\"Draft Proposal\").item.json.output.cover_email }}\n\n*Proposal*\n```{{ $(\"Draft Proposal\").item.json.output.proposal_text.slice(0, 2500) }}```",
+        "approvalOptions": {
+          "values": {
+            "approvalType": "double",
+            "approveLabel": "Approve and send",
+            "disapproveLabel": "Edit"
+          }
+        },
+        "options": {
+          "limitWaitTime": {
+            "values": {
+              "resumeAmount": 3,
+              "resumeUnit": "days"
+            }
+          }
+        }
+      },
+      "id": "768da889-6ca1-46eb-9abd-7ea46bdef68e",
+      "name": "Rep Reviews Proposal",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.7,
+      "position": [
+        1600,
+        224
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 1
+          },
+          "conditions": [
+            {
+              "leftValue": "={{ $json.data?.approved }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "f5ddedb2-dd90-4bc5-8dac-8b872c742620",
+      "name": "Proposal Approved?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1824,
+        224
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "reply",
+        "messageId": "={{ $(\"Get Proposals to Draft\").item.json.gmail_message_id }}",
+        "emailType": "text",
+        "message": "={{ $(\"Draft Proposal\").item.json.output.cover_email }}\n\n----------\n\n{{ $(\"Draft Proposal\").item.json.output.proposal_text }}",
+        "options": {
+          "appendAttribution": false,
+          "replyToSenderOnly": false
+        }
+      },
+      "id": "2b2d058c-b50e-4582-85ea-81e4c08661b6",
+      "name": "Send Proposal to Client",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        2048,
+        128
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyValue": "={{ $(\"Get Proposals to Draft\").item.json.id }}"
+            }
+          ]
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "stage": "Proposal sent",
+            "outreach_status": "proposal_sent",
+            "proposal_sent_at": "={{ $now.toISO() }}",
+            "proposal_followup_step": 0,
+            "gmail_thread_id": "={{ $json.threadId }}",
+            "gmail_message_id": "={{ $json.id }}",
+            "proposal_link": "={{ \"https://mail.google.com/mail/u/0/#all/\" + $json.threadId }}"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "284af5d8-5e69-4990-b64b-97bf21e66ae5",
+      "name": "Mark Proposal Sent",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        2272,
+        128
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "sendAndWait",
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "kit1-sales"
+        },
+        "message": "=What should change in the *{{ $(\"Get Proposals to Draft\").item.json.company_name }}* proposal? (price, scope, wording…) Claude will redraft and send it back for approval.",
+        "responseType": "freeText",
+        "options": {
+          "messageButtonLabel": "Request changes",
+          "responseFormTitle": "Proposal changes"
+        }
+      },
+      "id": "859a8a04-59f0-41bd-8b8a-fe598987d5a3",
+      "name": "Ask Rep What to Change",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.7,
+      "position": [
+        2048,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyValue": "={{ $(\"Get Proposals to Draft\").item.json.id }}"
+            }
+          ]
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "proposal_text": "={{ null }}",
+            "outreach_status": "revising",
+            "call_notes": "={{ ($(\"Get Proposals to Draft\").item.json.call_notes ?? \"\") + \"\\n\\nREVISION REQUEST (rep): \" + ($json.data?.text ?? \"\") }}"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "bc011c6e-d0ba-4e4a-b76c-b29871f0447e",
+      "name": "Queue Redraft",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        2272,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 9 * * 1-5"
+            }
+          ]
+        }
+      },
+      "id": "2d86980b-d774-4b79-adf1-8cfb35d581ac",
+      "name": "Weekdays 9am: Proposal Follow-ups",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        0,
+        560
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "stage",
+              "keyValue": "Proposal sent"
+            }
+          ]
+        },
+        "returnAll": true
+      },
+      "id": "30c44fff-a081-4136-9216-355c19adc9f3",
+      "name": "Get Open Proposals",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        224,
+        560
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ds-days",
+              "name": "days_open",
+              "value": "={{ Math.floor($now.diff(DateTime.fromISO($json.proposal_sent_at), \"days\").days) }}",
+              "type": "number"
+            },
+            {
+              "id": "ds-step",
+              "name": "fu_step",
+              "value": "={{ Number($json.proposal_followup_step ?? 0) }}",
+              "type": "number"
+            },
+            {
+              "id": "ds-first",
+              "name": "first_name",
+              "value": "={{ ($json.contact_name ?? \"\").split(\" \")[0] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "id": "f9bff236-83f6-4eed-bf97-a60c49b9d151",
+      "name": "Days Since Sent",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        448,
+        560
+      ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "loose",
+                  "version": 1
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.days_open }}",
+                    "operator": {
+                      "type": "number",
+                      "operation": "gte"
+                    },
+                    "rightValue": 21
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "loose",
+                  "version": 1
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.days_open }}",
+                    "operator": {
+                      "type": "number",
+                      "operation": "gte"
+                    },
+                    "rightValue": 14
+                  },
+                  {
+                    "leftValue": "={{ $json.fu_step }}",
+                    "operator": {
+                      "type": "number",
+                      "operation": "lt"
+                    },
+                    "rightValue": 3
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "loose",
+                  "version": 1
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.days_open }}",
+                    "operator": {
+                      "type": "number",
+                      "operation": "gte"
+                    },
+                    "rightValue": 7
+                  },
+                  {
+                    "leftValue": "={{ $json.fu_step }}",
+                    "operator": {
+                      "type": "number",
+                      "operation": "lt"
+                    },
+                    "rightValue": 2
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "loose",
+                  "version": 1
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.days_open }}",
+                    "operator": {
+                      "type": "number",
+                      "operation": "gte"
+                    },
+                    "rightValue": 3
+                  },
+                  {
+                    "leftValue": "={{ $json.fu_step }}",
+                    "operator": {
+                      "type": "number",
+                      "operation": "lt"
+                    },
+                    "rightValue": 1
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "96c2c797-7aa6-4b40-964c-cc7fe582445d",
+      "name": "Which Follow-up?",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        672,
+        528
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyValue": "={{ $json.id }}"
+            }
+          ]
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "stage": "Lost",
+            "outreach_status": "closed",
+            "lost_reason": "No response to proposal after 21 days"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "856e6757-1d53-486e-815a-475da11c7b6f",
+      "name": "Close as Lost (No Reply)",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        960,
+        224
+      ]
+    },
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "kit1-sales"
+        },
+        "text": "=Closed as lost (no reply to the proposal in 21 days): {{ $(\"Days Since Sent\").item.json.company_name }}.",
+        "otherOptions": {}
+      },
+      "id": "a502a6d8-1510-47c7-8bec-1c5f49567e50",
+      "name": "Post Silent Loss",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.7,
+      "position": [
+        1248,
+        224
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "reply",
+        "messageId": "={{ $json.gmail_message_id }}",
+        "emailType": "text",
+        "message": "=Hi {{ $json.first_name }}, I do not want to keep nudging, so this is my last note on the proposal. If now is not the right time, just let me know and I will close it out — no hard feelings. If it is still on your list, I am happy to adjust anything.\n\nYour Name",
+        "options": {
+          "appendAttribution": false,
+          "replyToSenderOnly": false
+        }
+      },
+      "id": "9d89e4cd-4e67-4d8a-9c03-41f9e0954006",
+      "name": "Send Day-14 Final Note",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        960,
+        416
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyValue": "={{ $(\"Days Since Sent\").item.json.id }}"
+            }
+          ]
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "proposal_followup_step": 3,
+            "last_contacted_at": "={{ $now.toISO() }}"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "412be311-2caf-45fc-8453-eb465617ffd7",
+      "name": "Log Final Note",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        1248,
+        416
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Client first name: {{ $json.first_name }}\nCall notes:\n{{ ($json.call_notes ?? \"\").slice(0, 4000) }}\n\nProposal:\n{{ ($json.proposal_text ?? \"\").slice(0, 4000) }}",
+        "options": {
+          "systemMessage": "Write a short follow-up email (under 90 words, plain text) sent 7 days after a proposal with no decision. Address the one or two most likely objections for this client (price, timing, switching effort) using facts from the notes and proposal. End with an easy next step. Sign it \"Your Name\". Return only the email body."
+        }
+      },
+      "id": "63c50c05-ee7e-4ef2-8454-0f0599d5780e",
+      "name": "Write Objection Follow-up",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        896,
+        608
+      ]
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "claude-sonnet-5",
+          "cachedResultName": "Claude Sonnet 5"
+        },
+        "options": {
+          "maxTokensToSample": 800
+        }
+      },
+      "id": "9769a7fd-ec5f-4bdb-a8cf-1292a4ddc443",
+      "name": "Claude (Follow-up)",
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.6,
+      "position": [
+        976,
+        832
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "reply",
+        "messageId": "={{ $(\"Days Since Sent\").item.json.gmail_message_id }}",
+        "emailType": "text",
+        "message": "={{ $json.output }}",
+        "options": {
+          "appendAttribution": false,
+          "replyToSenderOnly": false
+        }
+      },
+      "id": "589049b5-f1d3-4029-b55f-ce57fcdeaa3f",
+      "name": "Send Day-7 Follow-up",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        1248,
+        720
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyValue": "={{ $(\"Days Since Sent\").item.json.id }}"
+            }
+          ]
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "proposal_followup_step": 2,
+            "last_contacted_at": "={{ $now.toISO() }}"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "34c8dcd4-1f52-410b-b9a6-746641e2b5ec",
+      "name": "Log Day-7 Follow-up",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        1472,
+        720
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "reply",
+        "messageId": "={{ $json.gmail_message_id }}",
+        "emailType": "text",
+        "message": "=Hi {{ $json.first_name }}, just checking the proposal came through OK and whether any questions have come up. Happy to walk your team through it on a quick call.\n\nYour Name",
+        "options": {
+          "appendAttribution": false,
+          "replyToSenderOnly": false
+        }
+      },
+      "id": "36c6fb21-d4fe-49d5-8002-43d82f310865",
+      "name": "Send Day-3 Check-in",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        960,
+        1008
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyValue": "={{ $(\"Days Since Sent\").item.json.id }}"
+            }
+          ]
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "proposal_followup_step": 1,
+            "last_contacted_at": "={{ $now.toISO() }}"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "dddc4726-b05c-49e8-9edc-7fe440fbaeff",
+      "name": "Log Day-3 Check-in",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        1248,
+        1008
+      ]
+    },
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyX",
+              "value": 5,
+              "unit": "minutes"
+            }
+          ]
+        },
+        "simple": false,
+        "filters": {
+          "q": "in:inbox -from:me newer_than:3d",
+          "readStatus": "unread"
+        },
+        "options": {}
+      },
+      "id": "4a4b568d-dd50-4fd4-b68e-cf4536c23f85",
+      "name": "Client Replied to Proposal",
+      "type": "n8n-nodes-base.gmailTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        0,
+        1520
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "gmail_thread_id",
+              "keyValue": "={{ $json.threadId }}"
+            },
+            {
+              "keyName": "contact_email",
+              "keyValue": "={{ ($json.from?.value?.[0]?.address ?? \"none\").toLowerCase() }}"
+            }
+          ]
+        },
+        "limit": 1
+      },
+      "id": "cfbf619d-0545-4e1c-9ff5-a1d831e66d2c",
+      "name": "Find Deal",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        272,
+        1648
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "combinator": "and",
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 1
+          },
+          "conditions": [
+            {
+              "leftValue": "={{ $json.stage }}",
+              "rightValue": "Proposal sent",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "b15f1d24-5569-4a7d-a5e6-1d8ecb08b3f2",
+      "name": "Only Open Proposals",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.4,
+      "position": [
+        496,
+        1648
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Client: {{ $json.contact_name }} at {{ $json.company_name }}\nTheir reply to our proposal:\n{{ ($(\"Client Replied to Proposal\").item.json.text ?? \"\").slice(0, 3000) }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "Classify a client reply to a sales proposal. decision must be exactly one of: accepted (they accept or say they signed), declined (they say no), changes (they ask for changes to scope, price or terms), other (questions or anything else). lost_reason: for declined, the stated or most likely reason in under 12 words. change_request: for changes, what they asked for. summary: one line."
+        }
+      },
+      "id": "57a5875b-7e91-4d70-a3b0-9414698bdcd9",
+      "name": "Read Client Decision",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        720,
+        1648
+      ]
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "claude-sonnet-5",
+          "cachedResultName": "Claude Sonnet 5"
+        },
+        "options": {
+          "maxTokensToSample": 800
+        }
+      },
+      "id": "722c38fd-64e4-4332-a582-3289993d5bd1",
+      "name": "Claude (Decision)",
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.6,
+      "position": [
+        736,
+        1872
+      ]
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{ \"decision\": \"accepted\", \"lost_reason\": \"\", \"change_request\": \"\", \"summary\": \"Accepted, wants to start Dec 1\" }"
+      },
+      "id": "abbf75a6-5468-4efd-96e5-d2c6da4d6913",
+      "name": "Decision Format",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        864,
+        1872
+      ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 1
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.output.decision }}",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "rightValue": "accepted"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 1
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.output.decision }}",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "rightValue": "declined"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 1
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.output.decision }}",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "rightValue": "changes"
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra",
+          "renameFallbackOutput": "Other"
+        }
+      },
+      "id": "f4d98dc6-e141-46b1-8ac0-0a00ee5e5ce6",
+      "name": "Route by Decision",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        752,
+        1488
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyValue": "={{ $(\"Find Deal\").item.json.id }}"
+            }
+          ]
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "stage": "Won",
+            "outreach_status": "won"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "aa06d84c-736d-4b83-93e4-bb6df2defc36",
+      "name": "Mark Won",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        976,
+        1232
+      ]
+    },
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "kit1-sales"
+        },
+        "text": "=:tada: *Won: {{ $(\"Find Deal\").item.json.company_name }}* — {{ $(\"Read Client Decision\").item.json.output.summary }}\nNext: send the agreement for e-signature, then start Kit 2 (invoice) and Kit 3 (onboarding).",
+        "otherOptions": {}
+      },
+      "id": "ffaa3a6c-c88c-4d27-8f7c-ab080d7dc024",
+      "name": "Post the Win",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.7,
+      "position": [
+        1200,
+        1232
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "markAsRead",
+        "messageId": "={{ $(\"Client Replied to Proposal\").item.json.id }}"
+      },
+      "id": "acda22f7-5c24-40f5-874f-085308f7e108",
+      "name": "Mark Proposal Reply as Handled",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        1424,
+        1520
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyValue": "={{ $(\"Find Deal\").item.json.id }}"
+            }
+          ]
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "stage": "Lost",
+            "outreach_status": "closed",
+            "lost_reason": "={{ $json.output.lost_reason || \"Declined\" }}"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "fbb6386f-d5ba-4a79-a776-869a2a620e05",
+      "name": "Mark Lost with Reason",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        976,
+        1424
+      ]
+    },
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "kit1-sales"
+        },
+        "text": "=Lost: {{ $(\"Find Deal\").item.json.company_name }} — {{ $(\"Read Client Decision\").item.json.output.lost_reason || \"declined\" }}",
+        "otherOptions": {}
+      },
+      "id": "f6a9115b-a95c-405a-91ed-ed324ad14897",
+      "name": "Post the Loss",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.7,
+      "position": [
+        1200,
+        1424
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Kit1 Leads"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyValue": "={{ $(\"Find Deal\").item.json.id }}"
+            }
+          ]
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "stage": "Proposal needed",
+            "outreach_status": "revising",
+            "proposal_text": "={{ null }}",
+            "gmail_message_id": "={{ $(\"Client Replied to Proposal\").item.json.id }}",
+            "call_notes": "={{ ($(\"Find Deal\").item.json.call_notes ?? \"\") + \"\\n\\nREVISION REQUEST (client): \" + $json.output.change_request }}"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "49cf67d3-1eeb-4684-9da7-e6976890de8d",
+      "name": "Queue Revision from Client",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        1200,
+        1616
+      ]
+    },
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "kit1-sales"
+        },
+        "text": "=:speech_balloon: {{ $(\"Find Deal\").item.json.contact_name }} ({{ $(\"Find Deal\").item.json.company_name }}) replied about the proposal — please answer in Gmail.\n> {{ ($(\"Client Replied to Proposal\").item.json.text ?? \"\").slice(0, 800) }}",
+        "otherOptions": {}
+      },
+      "id": "7028dcdf-01ec-4fd3-8415-631a8cc28dd4",
+      "name": "Send Reply to Rep",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.7,
+      "position": [
+        1200,
+        1808
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Automation 4 — Proposal generator and follow-up\nEdit **Packages and Pricing** with the real packages, pricing rules and how to accept (reply or e-signature link).\n\n• Every 15 min: deals at *Proposal needed* get a Claude-drafted proposal from the call notes (or 5 bullets from the rep). The rep approves or requests edits in Slack; custom scope or a big discount is flagged for a manager.\n• Approved → emailed in the deal thread → *Proposal sent*.\n• Follow-ups on day 3, 7 (objections) and 14; silent at day 21 → *Lost*.\n• Client replies: accepted → *Won* (+ Slack win, hand-off to Kit 2/3), declined → *Lost* with reason, changes → redraft and re-approve.",
+        "height": 240,
+        "width": 720,
+        "color": 4
+      },
+      "id": "8d96212b-a815-457d-859d-e474a9480847",
+      "name": "Sticky Note 89be1120",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -32,
+        -384
+      ]
+    }
+  ]
+}
