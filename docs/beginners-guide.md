@@ -42,11 +42,10 @@ Ready for outreach ──▶ Contacted ──▶ Interested ──▶ Meeting bo
 
 ### A1 — Prospect list builder (`workflows/A1-prospect-list-builder.json`)
 
-Every Monday: **ICP Settings** → search prospects → drop companies already in the CRM or on the exclusion list → get verified work emails → **Read Company Website** (Firecrawl) → **Research and Score Prospect** (Claude, can search recent news) → stage *Ready for outreach* if score ≥ 70, else *Researched* → **Save Lead to CRM** → top 5 posted to Slack.
+Every Monday: **ICP Settings** → **Search Apollo for Prospects** (if Apollo errors, e.g. out of credits, **Alert: Apollo Search Failed** posts to Slack and the run stops) → drop companies already in the CRM or on the exclusion list → **Get Verified Work Email** from Apollo → **Read Company Website** (Firecrawl) → **Research and Score Prospect** (Claude, can search recent news) → stage *Ready for outreach* if score ≥ 70, else *Researched* → **Save Lead to CRM** → top 5 posted to Slack.
 
 Every Friday a second trigger counts the week across the pipeline and posts the Kit 1 weekly report.
 
-> **Note:** in the current version the prospect search step is an unconfigured **Prospeo "Enrich a person"** node (added in the n8n editor), and the Apollo error-alert node is not connected. Configure the search node — or swap back to an Apollo HTTP Request to `POST /api/v1/mixed_people/search` — so it outputs a `people` array, which the next node splits.
 
 ### A2 — Outreach and reply handler (`workflows/A2-outreach-and-reply-handler.json`)
 
@@ -106,7 +105,7 @@ Four triggers on one canvas:
 4. Reply "Sounds interesting", run **New Reply in Inbox** — the row moves to *Interested*.
 5. Continue through A3 and A4 the same way. Check follow-ups reach the lead, not your own inbox.
 
-To test A1 cheaply, set `weekly_target` to 5 first — enrichment providers charge per email revealed.
+To test A1 cheaply, set `weekly_target` to 5 first — Apollo charges credits per email revealed.
 
 ## Troubleshooting
 

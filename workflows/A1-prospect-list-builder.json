@@ -19,7 +19,7 @@
       "main": [
         [
           {
-            "node": "Enrich a person",
+            "node": "Search Apollo for Prospects",
             "type": "main",
             "index": 0
           }
@@ -224,11 +224,18 @@
         ]
       ]
     },
-    "Enrich a person": {
+    "Search Apollo for Prospects": {
       "main": [
         [
           {
             "node": "One Item per Person",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Alert: Apollo Search Failed",
             "type": "main",
             "index": 0
           }
@@ -321,6 +328,27 @@
     },
     {
       "parameters": {
+        "method": "POST",
+        "url": "https://api.apollo.io/api/v1/mixed_people/search",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpTemplatedCustomAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ person_titles: $json.person_titles, organization_num_employees_ranges: $json.employee_ranges, person_locations: $json.locations, q_organization_keyword_tags: $json.industry_keywords, contact_email_status: [\"verified\"], per_page: Math.min($json.weekly_target, 100), page: ($now.weekNumber % 5) + 1 }) }}",
+        "options": {}
+      },
+      "id": "5c1f3a2e-7b4d-4e8a-9f10-a9e1c0d4b7f3",
+      "name": "Search Apollo for Prospects",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        448,
+        96
+      ],
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
         "select": "channel",
         "channelId": {
           "__rl": true,
@@ -335,8 +363,8 @@
       "type": "n8n-nodes-base.slack",
       "typeVersion": 2.7,
       "position": [
-        832,
-        432
+        720,
+        320
       ]
     },
     {
@@ -934,20 +962,6 @@
         -144,
         -448
       ]
-    },
-    {
-      "parameters": {
-        "options": {},
-        "requestOptions": {}
-      },
-      "type": "@prospeo/n8n-nodes-prospeo.prospeo",
-      "typeVersion": 1,
-      "position": [
-        448,
-        96
-      ],
-      "id": "b1a813df-bf4d-458a-b0d2-4abfc7954e25",
-      "name": "Enrich a person"
     }
   ]
 }
